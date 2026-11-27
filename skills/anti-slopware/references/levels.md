@@ -31,7 +31,6 @@ Each level includes the ones above it.
 - Unreachable code: after `return`/`throw`, branches on constants, conditions that cannot be true.
 - Commented-out code.
 - Leftover debugging: prints, logs added for a one-off investigation, flags that are always off.
-- Comments that restate the code, narrate the edit ("added this to fix..."), or describe what was removed.
 - Wrappers that only forward to another function with the same arguments, when private.
 - Checks for states the surrounding code already rules out (null check right after construction, re-validating validated input inside the same module).
 - `try`/`catch` that only rethrows the same error unchanged.
@@ -40,7 +39,7 @@ Each level includes the ones above it.
 
 **Does not count**
 
-- Comments explaining why: constraints, workarounds, links to issues.
+- Comments. Cleanup never deletes a comment, whatever it says. Organising, correcting and shortening comments is the `code-docs` skill's job. Commented-out code is code, not a comment, and does count.
 - Validation at a trust boundary: user input, network, files, other processes.
 - Anything public, exported, or referenced from config, templates, reflection or registration.
 - Feature flags that can be turned on from outside the code.
@@ -66,7 +65,7 @@ The aim is code a newcomer can read top to bottom, change in one place, and find
 - Private names that mislead or say nothing (`data2`, `tmp`, `flag`, `x` outside a short loop). Rename to what the thing holds or does, in the file's existing naming style.
 - Numbers and strings that carry a meaning (`10` as a bulk threshold, `86400`). Give each a named constant, or use the one that already exists.
 - A long condition whose intent is not obvious. Name it with a local variable.
-- A comment that is needed only because the code under it is unclear. Make the code clear, then remove the comment.
+- Code that needs a comment only because it is unclear. Make the code clear. Keep the comment.
 
 **Disorganised**
 

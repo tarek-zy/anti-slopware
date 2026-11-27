@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.13.0
+
+- `code-docs` skill: documents a codebase in layers (file map, how it fits together, logic, reference, comments). Learns the project's own documentation system first and extends it. Moves long comment blocks into doc pages and leaves a pointer. Changes no code.
+- Cleanup no longer deletes comments at any level. Comment work belongs to `code-docs`. Commented-out code is still removed.
+- Guard mode documents new code in the project's style.
+- The example's `medium` and `hard` versions keep their comments (61 and 55 lines).
+
 ## 0.12.0
 
 - `organize` skill: improves project structure without changing behaviour. Plans first; then one pure move at a time, with old import paths kept working and tests left unchanged.

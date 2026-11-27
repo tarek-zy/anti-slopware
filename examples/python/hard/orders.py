@@ -2,10 +2,15 @@ BULK_ORDER_MIN_UNITS = 10
 
 
 def calculate_order_total(items, tax_rate):
+    # Initialize the total
     total = 0
+    # Loop over the items
     for item in items:
+        # Add the price times the quantity
         total += item["price"] * item["quantity"]
+    # Apply the tax
     total = total + total * tax_rate
+    # Return the total
     return round(total, 2)
 
 

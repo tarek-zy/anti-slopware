@@ -25,5 +25,5 @@
 <line x1="822" y1="217" x2="954" y2="217" stroke="#f85149" stroke-width="2" opacity="0.8"/>
 <rect x="828" y="234" width="170" height="12" rx="6" fill="#e6edf3" opacity="0.8"/>
 <rect x="800" y="257" width="90" height="12" rx="6" fill="#e6edf3" opacity="0.8"/>
-<text x="800" y="300" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="16" fill="#8b949e">96 -> 50 lines   <tspan fill="#3fb950">tests pass</tspan></text>
+<text x="800" y="300" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="16" fill="#8b949e">96 -> 55 lines   <tspan fill="#3fb950">tests pass</tspan></text>
 </svg>

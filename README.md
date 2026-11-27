@@ -7,7 +7,7 @@
 
 <br>
 
-**A plugin that quietly raises the quality of the code your AI agent writes,<br>so the people who own it can understand, review and maintain it.**
+**A plugin that quietly raises the quality of the code your AI agent writes:<br>cleaner, better organised and documented, so people can understand, review and maintain it.**
 
 [Skills](#what-is-inside) · [Two modes](#two-modes) · [How it works](#how-it-works) · [Install](#install) · [Use](#use) · [Levels](#levels) · [Proof](#proof) · [Roadmap](#roadmap)
 
@@ -26,7 +26,7 @@ anti-slopware improves the quality of that code. It removes the filler, then mak
 
 ## What is inside
 
-<p align="center"><img src="assets/skills.svg" alt="The nine skills: anti-slopware, organize, error-slop, test-slop, dep-check, junk-sweep, split-pr, slim-pr and review-map" width="100%"></p>
+<p align="center"><img src="assets/skills.svg" alt="The ten skills: anti-slopware, organize, code-docs, error-slop, test-slop, dep-check, junk-sweep, split-pr, slim-pr and review-map" width="100%"></p>
 
 ## What it improves
 
@@ -34,6 +34,7 @@ anti-slopware improves the quality of that code. It removes the filler, then mak
 |---|---|
 | **Easier to read** | Flat control flow instead of deep nesting, names that say what a thing holds, named constants instead of bare numbers |
 | **Easier to edit** | One copy of each rule, no dead code to step around, functions that do one job |
+| **Better documented** | A file map, pages for the logic that is not obvious, docstrings in your project's style, comments that are short and correct |
 | **Better organised** | Related code kept together, one pattern per job, files that each do one thing, no `utils` dumping grounds, no circular dependencies |
 
 ### Structure
@@ -41,6 +42,18 @@ anti-slopware improves the quality of that code. It removes the filler, then mak
 The `organize` skill works on how the project is laid out. It splits files that do several unrelated jobs, moves code to where a reader would look for it, breaks up `utils` files that have collected everything, removes circular dependencies and deletes stale duplicate modules.
 
 It plans first and shows you the list. Then it makes one move at a time, changes nothing inside the moved code, and leaves every old import path working, so your tests pass unchanged. It follows the structure your project already has and never invents a new architecture.
+
+### Documentation
+
+The `code-docs` skill documents the code so that people and coding agents can find their way around it. It works in layers: a file map, how the parts fit together, the logic that is not obvious from the code, reference docstrings, and comments.
+
+- **It learns your project's documentation system first** and extends it: your docs folder, your docs tool and its navigation, your docstring style, your decision records. It never drops in a template of its own.
+- **It never loses information.** A long comment block moves into a doc page, and a short comment stays in the code pointing to it.
+- **It corrects what is wrong.** A comment or page that disagrees with the code is fixed, or raised as a question when it is unclear which is right.
+- **It never invents a reason.** If nobody wrote down why something is the way it is, it asks you.
+- **It changes no code.** Only comments, docstrings and documentation files.
+
+The other skills work with it: cleanup leaves comments alone, guard mode documents new code as it is written, and `organize` is followed by an update to the file map.
 
 This is not a minifier. Fewer lines is a side effect, not the goal. When a named constant or a small helper makes code clearer, it adds one, and it never trades clarity for brevity.
 
@@ -152,6 +165,7 @@ Run it as `/anti-slopware`.
 | `/anti-slopware hard src/parser.c` | Everything, including naming and organisation, one file |
 | `/anti-slopware all` | Fix the whole project, one folder at a time |
 | `/anti-slopware report` | List findings, change nothing |
+| `/anti-slopware docs` or `/code-docs` | Audit the documentation; add `write` to fix and extend it |
 | `/anti-slopware organize` or `/organize` | Plan a better file and module structure; add `apply` to carry it out one move at a time |
 | `/anti-slopware pr` or `/slim-pr` | Write or trim the pull request description |
 | `/anti-slopware split` or `/split-pr` | Plan how to break one oversized branch into small pull requests |
@@ -174,7 +188,7 @@ Or ask in plain words: "clean up this branch", "remove the dead code in `utils/`
 | Level | Fixes | Applies |
 |---|---|---|
 | `easy` | Duplicated code | Directly |
-| `medium` | + unused, unreachable and leftover code, comments that restate the code | After you approve the list |
+| `medium` | + unused, unreachable and leftover code | After you approve the list |
 | `hard` | + needless nesting and single-use abstractions, misleading names, unnamed constants, functions that do several jobs, scattered related code | After you approve the list |
 
 Full definitions: [levels.md](skills/anti-slopware/references/levels.md).
@@ -189,6 +203,7 @@ Full definitions: [levels.md](skills/anti-slopware/references/levels.md).
 - Change behaviour: outputs, errors, ordering, numeric results.
 - Remove or change anything public.
 - Edit generated, vendored or ignored files, or anything outside the scope you gave.
+- Delete your comments. Comments are documentation. They are organised and corrected, never stripped.
 - Make code shorter at the cost of clarity.
 - Rename or reorganise to suit its own taste. Your project's style wins.
 - Work without a safety net. Code with no tests is compared before and after, and listed as not verified by tests. Code it cannot exercise is reported, not changed.
@@ -201,11 +216,11 @@ Full definitions: [levels.md](skills/anti-slopware/references/levels.md).
 
 [`examples/python`](examples/python) holds one sloppy file and the result at each level. One test file runs against all four:
 
-<p align="center"><img src="assets/proof.svg" alt="One file at each level: before 96 lines, easy 86, medium 56, hard 50. The same tests pass on all four." width="100%"></p>
+<p align="center"><img src="assets/proof.svg" alt="One file at each level: before 96 lines, easy 86, medium 61, hard 55. The same tests pass on all four." width="100%"></p>
 
 Run it yourself: `python3 examples/verify.py`
 
-`hard` is not the shortest possible version. It added a named constant, `BULK_ORDER_MIN_UNITS`, in place of a bare `10`, because that reads better.
+`hard` is not the shortest possible version. It added a named constant, `BULK_ORDER_MIN_UNITS`, in place of a bare `10`, because that reads better, and it kept every comment.
 
 Two rewrites `hard` refused in that file, because they change results:
 
@@ -246,7 +261,7 @@ It reports which tools ran and which were missing, and it never claims your code
 
 ## Roadmap
 
-<p align="center"><img src="assets/roadmap.svg" alt="v1 is shipped with nine skills, ten languages and guard and fix modes. Next: automatic checks on every edit and more languages, then clean-commits, slop-report and mem-safe." width="100%"></p>
+<p align="center"><img src="assets/roadmap.svg" alt="v1 is shipped with ten skills, ten languages and guard and fix modes. Next: automatic checks on every edit and more languages, then clean-commits, slop-report and mem-safe." width="100%"></p>
 
 Details in [ROADMAP.md](ROADMAP.md). Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md). Adding a language check is a good first one.
 

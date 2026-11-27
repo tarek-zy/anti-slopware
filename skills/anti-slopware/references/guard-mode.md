@@ -20,7 +20,7 @@ Confirm in one line: `anti-slopware guard on (<level>)`. Guard stays on for the 
 
 - Write only what the task asks for. No options, hooks, flags or parameters for needs nobody has stated.
 - No error handling for things that cannot happen. Validate at trust boundaries only.
-- No comments that restate the code or describe the change. Comment only a non-obvious why.
+- Comment the why, the constraints and anything a reader could not guess. Document new public functions in the project's docstring style, and add a new file to the project's file map if it has one. Do not narrate the edit in comments ("changed this to..."); that belongs in the commit message.
 - No debug output, no commented-out alternatives, no placeholder stubs.
 - No unused imports, variables or helpers. Remove what your own change orphans.
 
