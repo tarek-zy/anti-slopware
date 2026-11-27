@@ -11,6 +11,7 @@ Shipped one skill at a time, each with examples and tests.
 - [x] `dep-check`: unused dependencies, imports of packages that do not exist
 - [x] `error-slop`: swallowed exceptions, catch-everything blocks
 - [x] `review-map`: a reading guide for the reviewer
+- [x] `split-pr`: plans how to break one large change into small pull requests
 - [x] `junk-sweep`: leftover screenshots, temp files and regenerable build caches; lists first, deletes after approval
 
 ## v1.1
@@ -19,11 +20,8 @@ Shipped one skill at a time, each with examples and tests.
 - Language checks: Kotlin, Swift, Ruby, SQL, shell scripts
 - A test set for each language, with planted bugs and traps, scored automatically
 
+
 ## v1.2
-
-- `split-pr`: break one large change into small reviewable PRs
-
-## v1.3
 
 - `clean-commits`: tidy commit messages and group fix-up commits
 - `slop-report`: audit only

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.11.0
+
+- `split-pr` skill: plans how to break one oversized branch into small pull requests, one purpose each, with dependencies, merge order and a drop list. Plan only; it does not change the branch.
+- The JavaScript and Go language checks were tested on projects with planted bugs and traps. Both passed with no change needed.
+
 ## 0.10.1
 
 From a harder guard mode test (a vague request in a messier project):
