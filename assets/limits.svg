@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 288" width="1200" height="288" role="img" aria-label="What it will not do: change behaviour, touch public code, edit files out of scope, trade clarity for brevity, impose taste, work without a safety net, edit tests alongside code, or claim your code is bug-free">
+<style>
+.card{fill:#f6f8fa;stroke:#d1d9e0}.fg{fill:#1f2328}.mu{fill:#59636e}.ln{stroke:#d1d9e0}.chip{fill:#ffffff;stroke:#d1d9e0}
+@media (prefers-color-scheme: dark){.card{fill:#161b22;stroke:#30363d}.fg{fill:#e6edf3}.mu{fill:#8b949e}.ln{stroke:#30363d}.chip{fill:#0d1117;stroke:#30363d}}
+</style>
+<rect x="1" y="1" width="280" height="130" rx="14" class="card" stroke-width="1.5"/>
+<g transform="translate(20,20) scale(1.0833333333333333)" fill="none" stroke="#e5534b" stroke-width="2.12" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></g>
+<text x="56" y="40" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17.5" font-weight="700" text-anchor="start">Change behaviour</text>
+<text x="22" y="78" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Outputs, errors, ordering and</text>
+<text x="22" y="100" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">numeric results stay the same.</text>
+<rect x="307" y="1" width="280" height="130" rx="14" class="card" stroke-width="1.5"/>
+<g transform="translate(326,20) scale(1.0833333333333333)" fill="none" stroke="#e5534b" stroke-width="2.12" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></g>
+<text x="362" y="40" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17.5" font-weight="700" text-anchor="start">Touch public code</text>
+<text x="328" y="78" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Exported names, signatures,</text>
+<text x="328" y="100" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">flags and formats are kept.</text>
+<rect x="613" y="1" width="280" height="130" rx="14" class="card" stroke-width="1.5"/>
+<g transform="translate(632,20) scale(1.0833333333333333)" fill="none" stroke="#e5534b" stroke-width="2.12" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></g>
+<text x="668" y="40" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17.5" font-weight="700" text-anchor="start">Edit off-limits files</text>
+<text x="634" y="78" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Generated, vendored, ignored</text>
+<text x="634" y="100" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">or outside the scope you gave.</text>
+<rect x="919" y="1" width="280" height="130" rx="14" class="card" stroke-width="1.5"/>
+<g transform="translate(938,20) scale(1.0833333333333333)" fill="none" stroke="#e5534b" stroke-width="2.12" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></g>
+<text x="974" y="40" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17.5" font-weight="700" text-anchor="start">Shorten at any cost</text>
+<text x="940" y="78" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">No dense one-liners, no</text>
+<text x="940" y="100" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">clever tricks.</text>
+<rect x="1" y="157" width="280" height="130" rx="14" class="card" stroke-width="1.5"/>
+<g transform="translate(20,176) scale(1.0833333333333333)" fill="none" stroke="#e5534b" stroke-width="2.12" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></g>
+<text x="56" y="196" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17.5" font-weight="700" text-anchor="start">Impose its own taste</text>
+<text x="22" y="234" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Your project's style and</text>
+<text x="22" y="256" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">naming always win.</text>
+<rect x="307" y="157" width="280" height="130" rx="14" class="card" stroke-width="1.5"/>
+<g transform="translate(326,176) scale(1.0833333333333333)" fill="none" stroke="#e5534b" stroke-width="2.12" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></g>
+<text x="362" y="196" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17.5" font-weight="700" text-anchor="start">Skip the safety net</text>
+<text x="328" y="234" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Untested code is compared</text>
+<text x="328" y="256" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">before and after, or left alone.</text>
+<rect x="613" y="157" width="280" height="130" rx="14" class="card" stroke-width="1.5"/>
+<g transform="translate(632,176) scale(1.0833333333333333)" fill="none" stroke="#e5534b" stroke-width="2.12" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></g>
+<text x="668" y="196" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17.5" font-weight="700" text-anchor="start">Edit tests with code</text>
+<text x="634" y="234" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">Tests are the safety net, so</text>
+<text x="634" y="256" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">they stay fixed during a run.</text>
+<rect x="919" y="157" width="280" height="130" rx="14" class="card" stroke-width="1.5"/>
+<g transform="translate(938,176) scale(1.0833333333333333)" fill="none" stroke="#e5534b" stroke-width="2.12" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></g>
+<text x="974" y="196" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17.5" font-weight="700" text-anchor="start">Claim it is bug-free</text>
+<text x="940" y="234" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">It says what was checked</text>
+<text x="940" y="256" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">and what was not.</text>
+</svg>

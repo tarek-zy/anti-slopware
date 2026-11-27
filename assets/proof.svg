@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" width="1200" height="240" role="img" aria-label="One file at each level: before 96 lines, easy 86, medium 56, hard 50. The same tests pass on all four.">
+<style>
+.card{fill:#f6f8fa;stroke:#d1d9e0}.fg{fill:#1f2328}.mu{fill:#59636e}.ln{stroke:#d1d9e0}.chip{fill:#ffffff;stroke:#d1d9e0}
+@media (prefers-color-scheme: dark){.card{fill:#161b22;stroke:#30363d}.fg{fill:#e6edf3}.mu{fill:#8b949e}.ln{stroke:#30363d}.chip{fill:#0d1117;stroke:#30363d}}
+</style>
+<text x="8" y="33" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="19" font-weight="700" text-anchor="start">before</text>
+<rect x="120" y="8" width="700" height="38" rx="9" fill="#8b949e" opacity="0.85"/>
+<text x="836.0" y="34" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">96 lines</text>
+<g transform="translate(1010,14) scale(1.0833333333333333)" fill="none" stroke="#2da44e" stroke-width="2.12" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"/><path d="M8 12l3 3 5-6"/></g>
+<text x="1046" y="34" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" text-anchor="start">tests pass</text>
+<text x="8" y="95" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="19" font-weight="700" text-anchor="start">easy</text>
+<rect x="120" y="70" width="627" height="38" rx="9" fill="#2da44e" opacity="0.85"/>
+<text x="763.0833333333334" y="96" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">86 lines</text>
+<g transform="translate(1010,76) scale(1.0833333333333333)" fill="none" stroke="#2da44e" stroke-width="2.12" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"/><path d="M8 12l3 3 5-6"/></g>
+<text x="1046" y="96" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" text-anchor="start">tests pass</text>
+<text x="8" y="157" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="19" font-weight="700" text-anchor="start">medium</text>
+<rect x="120" y="132" width="408" height="38" rx="9" fill="#db6d28" opacity="0.85"/>
+<text x="544.3333333333334" y="158" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">56 lines</text>
+<g transform="translate(1010,138) scale(1.0833333333333333)" fill="none" stroke="#2da44e" stroke-width="2.12" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"/><path d="M8 12l3 3 5-6"/></g>
+<text x="1046" y="158" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" text-anchor="start">tests pass</text>
+<text x="8" y="219" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="19" font-weight="700" text-anchor="start">hard</text>
+<rect x="120" y="194" width="365" height="38" rx="9" fill="#e5534b" opacity="0.85"/>
+<text x="500.58333333333337" y="220" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">50 lines</text>
+<g transform="translate(1010,200) scale(1.0833333333333333)" fill="none" stroke="#2da44e" stroke-width="2.12" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"/><path d="M8 12l3 3 5-6"/></g>
+<text x="1046" y="220" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" text-anchor="start">tests pass</text>
+</svg>
