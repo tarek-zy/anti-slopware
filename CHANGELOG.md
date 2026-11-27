@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.0
+
+- `test-slop` skill: finds tests that prove nothing and proves each case by breaking the code. Reports by default; `fix` strengthens or removes them. Never edits the code under test.
+
 ## 0.5.0
 
 - `slim-pr` skill: writes or trims a pull request description to what, why, how to test and risks; drops unsupported claims; keeps breaking changes; flags noise in the diff.
