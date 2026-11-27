@@ -9,7 +9,7 @@
 
 **A plugin that helps your coding agent produce higher-quality code<br>and pull requests humans can review, then proves nothing broke.**
 
-[Skills](#what-is-inside) · [Two modes](#two-modes) · [How it works](#how-it-works) · [Install](#install) · [Use](#use) · [Levels](#levels) · [Proof](#proof) · [Roadmap](ROADMAP.md)
+[Skills](#what-is-inside) · [Two modes](#two-modes) · [How it works](#how-it-works) · [Install](#install) · [Use](#use) · [Levels](#levels) · [Proof](#proof) · [Roadmap](#roadmap)
 
 [![verify](https://github.com/tarek-zy/anti-slopware/actions/workflows/verify.yml/badge.svg)](https://github.com/tarek-zy/anti-slopware/actions/workflows/verify.yml)
 [![license](https://img.shields.io/github/license/tarek-zy/anti-slopware?style=flat-square&color=1a7f37)](LICENSE)
@@ -168,6 +168,11 @@ Full definitions: [levels.md](skills/anti-slopware/references/levels.md).
 
 ## What it will not do
 
+<p align="center"><img src="assets/limits.svg" alt="Eight things it never does: change behaviour, touch public code, edit off-limits files, shorten at any cost, impose its own taste, skip the safety net, edit tests with code, or claim your code is bug-free" width="100%"></p>
+
+<details>
+<summary>The same list as text</summary>
+
 - Change behaviour: outputs, errors, ordering, numeric results.
 - Remove or change anything public.
 - Edit generated, vendored or ignored files, or anything outside the scope you gave.
@@ -177,17 +182,15 @@ Full definitions: [levels.md](skills/anti-slopware/references/levels.md).
 - Edit your tests while it edits the code they protect.
 - Say your code is bug-free. It says what was checked and what was not.
 
+</details>
+
 ## Proof
 
 [`examples/python`](examples/python) holds one sloppy file and the result at each level. One test file runs against all four:
 
-```
-$ python3 examples/verify.py
-before   96 lines  tests: pass
-easy     86 lines  tests: pass
-medium   56 lines  tests: pass
-hard     50 lines  tests: pass
-```
+<p align="center"><img src="assets/proof.svg" alt="One file at each level: before 96 lines, easy 86, medium 56, hard 50. The same tests pass on all four." width="100%"></p>
+
+Run it yourself: `python3 examples/verify.py`
 
 `hard` is not the shortest possible version. It added a named constant, `BULK_ORDER_MIN_UNITS`, in place of a bare `10`, because that reads better.
 
@@ -202,6 +205,11 @@ Two rewrites `hard` refused in that file, because they change results:
 
 Cleanup is one job. Finding bugs is another. For each language in your code, the skill first checks that the code builds, runs the standard tools that are installed, then reads for the bugs that language is known for. It reports them as findings and fixes them only if you ask, because a fix changes behaviour.
 
+<p align="center"><img src="assets/languages.svg" alt="Bug checks for ten languages: Python, JavaScript and TypeScript, Java, C#, C, C++, Go, Rust, PHP, Dart and Flutter" width="100%"></p>
+
+<details>
+<summary>Tools it runs and what it looks for, per language</summary>
+
 | Language | Tools it runs when installed | Examples of what it looks for |
 |---|---|---|
 | Python | compileall, Ruff, mypy or Pyright, Vulture, Bandit | Mutable default arguments, unawaited coroutines, broad `except`, unsafe `eval` and `pickle` |
@@ -215,24 +223,19 @@ Cleanup is one job. Finding bugs is another. For each language in your code, the
 | PHP | `php -l`, PHPStan, Psalm | Loose comparison, SQL injection, unescaped output |
 | Dart, Flutter | `dart analyze`, `flutter test` | `BuildContext` after `await`, undisposed controllers, futures created in `build` |
 
+</details>
+
 Every language also gets the checks for mistakes AI-written code makes everywhere: invented APIs, wrong signatures, swallowed errors, off-by-one, leaked resources, injection and secrets in code.
 
 Each language file also lists what is **not** slop there, such as functions a framework finds by name, so cleanup leaves them alone. Details: [languages.md](skills/anti-slopware/references/languages.md).
 
 It reports which tools ran and which were missing, and it never claims your code is bug-free.
 
-## Skills
+## Roadmap
 
-| Skill | Does | Status |
-|---|---|---|
-| `anti-slopware` | Duplicated, useless, verbose, unclear and disorganised code | Shipped |
-| `slim-pr` | PR descriptions a reviewer can read in a minute; flags noise in the diff and claims the diff does not support | Shipped |
-| `test-slop` | Finds tests that prove nothing, and proves it by breaking the code and showing the test still passes | Shipped |
-| `dep-check` | Unused and undeclared dependencies, and AI-invented package names. Never adds a package without evidence it exists | Shipped |
-| `error-slop` | Error handling that hides failures: empty catches, silent defaults, fake success, lost causes. Leaves deliberate handling alone | Shipped |
-| `junk-sweep` | Leftover screenshots, scratch files, logs and build caches. Lists with sizes, removes only after approval, never touches tracked or referenced files, secrets or user data | Shipped |
+<p align="center"><img src="assets/roadmap.svg" alt="v1 is shipped with six skills, ten languages and guard and fix modes. Next: automatic checks on every edit, more languages, then split-pr, review-map, clean-commits, slop-report and mem-safe." width="100%"></p>
 
-More in [ROADMAP.md](ROADMAP.md). Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
+Details in [ROADMAP.md](ROADMAP.md). Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md). Adding a language check is a good first one.
 
 ## Related
 

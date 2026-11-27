@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" width="1200" height="260" role="img" aria-label="Bug checks for ten languages: Python, JavaScript and TypeScript, Java, C#, C, C++, Go, Rust, PHP, Dart and Flutter">
+<style>
+.card{fill:#f6f8fa;stroke:#d1d9e0}.fg{fill:#1f2328}.mu{fill:#59636e}.ln{stroke:#d1d9e0}.chip{fill:#ffffff;stroke:#d1d9e0}
+@media (prefers-color-scheme: dark){.card{fill:#161b22;stroke:#30363d}.fg{fill:#e6edf3}.mu{fill:#8b949e}.ln{stroke:#30363d}.chip{fill:#0d1117;stroke:#30363d}}
+</style>
+<rect x="1.0" y="1" width="218.8" height="116" rx="14" class="card" stroke-width="1.5"/>
+<circle cx="26.0" cy="32" r="7" fill="#388bfd"/>
+<text x="44.0" y="39" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.5" font-weight="700" text-anchor="start">Python</text>
+<text x="20.0" y="72" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">mutable defaults,</text>
+<text x="20.0" y="93" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">unawaited coroutines</text>
+<rect x="245.8" y="1" width="218.8" height="116" rx="14" class="card" stroke-width="1.5"/>
+<circle cx="270.8" cy="32" r="7" fill="#db6d28"/>
+<text x="288.8" y="39" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.5" font-weight="700" text-anchor="start">JS / TS</text>
+<text x="264.8" y="72" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">missing await,</text>
+<text x="264.8" y="93" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">loose equality</text>
+<rect x="490.6" y="1" width="218.8" height="116" rx="14" class="card" stroke-width="1.5"/>
+<circle cx="515.6" cy="32" r="7" fill="#e5534b"/>
+<text x="533.6" y="39" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.5" font-weight="700" text-anchor="start">Java</text>
+<text x="509.6" y="72" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">null dereference,</text>
+<text x="509.6" y="93" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">== on strings</text>
+<rect x="735.4" y="1" width="218.8" height="116" rx="14" class="card" stroke-width="1.5"/>
+<circle cx="760.4" cy="32" r="7" fill="#a371f7"/>
+<text x="778.4" y="39" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.5" font-weight="700" text-anchor="start">C#</text>
+<text x="754.4" y="72" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">async void,</text>
+<text x="754.4" y="93" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">undisposed objects</text>
+<rect x="980.2" y="1" width="218.8" height="116" rx="14" class="card" stroke-width="1.5"/>
+<circle cx="1005.2" cy="32" r="7" fill="#1b9e9e"/>
+<text x="1023.2" y="39" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.5" font-weight="700" text-anchor="start">C</text>
+<text x="999.2" y="72" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">use-after-free,</text>
+<text x="999.2" y="93" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">buffer overflows</text>
+<rect x="1.0" y="143" width="218.8" height="116" rx="14" class="card" stroke-width="1.5"/>
+<circle cx="26.0" cy="174" r="7" fill="#388bfd"/>
+<text x="44.0" y="181" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.5" font-weight="700" text-anchor="start">C++</text>
+<text x="20.0" y="214" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">dangling references,</text>
+<text x="20.0" y="235" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">use-after-move</text>
+<rect x="245.8" y="143" width="218.8" height="116" rx="14" class="card" stroke-width="1.5"/>
+<circle cx="270.8" cy="174" r="7" fill="#1b9e9e"/>
+<text x="288.8" y="181" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.5" font-weight="700" text-anchor="start">Go</text>
+<text x="264.8" y="214" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">ignored errors,</text>
+<text x="264.8" y="235" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">goroutine leaks</text>
+<rect x="490.6" y="143" width="218.8" height="116" rx="14" class="card" stroke-width="1.5"/>
+<circle cx="515.6" cy="174" r="7" fill="#db6d28"/>
+<text x="533.6" y="181" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.5" font-weight="700" text-anchor="start">Rust</text>
+<text x="509.6" y="214" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">unwrap on errors,</text>
+<text x="509.6" y="235" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">unjustified unsafe</text>
+<rect x="735.4" y="143" width="218.8" height="116" rx="14" class="card" stroke-width="1.5"/>
+<circle cx="760.4" cy="174" r="7" fill="#a371f7"/>
+<text x="778.4" y="181" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.5" font-weight="700" text-anchor="start">PHP</text>
+<text x="754.4" y="214" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">loose comparison,</text>
+<text x="754.4" y="235" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">SQL injection</text>
+<rect x="980.2" y="143" width="218.8" height="116" rx="14" class="card" stroke-width="1.5"/>
+<circle cx="1005.2" cy="174" r="7" fill="#2da44e"/>
+<text x="1023.2" y="181" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.5" font-weight="700" text-anchor="start">Dart / Flutter</text>
+<text x="999.2" y="214" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">context after await,</text>
+<text x="999.2" y="235" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="14.5" font-weight="400" text-anchor="start">undisposed controllers</text>
+</svg>
