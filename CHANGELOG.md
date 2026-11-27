@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.13.1
+
+- `junk-sweep` now tells logs and copies apart by evidence, not by name. Throwaway logs (debug output, package-manager dumps, captured test runs, empty files) are candidates. Application, audit, transaction, deploy, crash and rotated logs never are, and are listed as kept with a flag on any that contain errors.
+- Backups are never candidates. A merge or editor leftover is a candidate only when its content is identical to the real file or a committed version.
+- A tool cache inside a dependency folder is a candidate; the folder around it is not.
+- Log contents are never copied into the report.
+
 ## 0.13.0
 
 - `code-docs` skill: documents a codebase in layers (file map, how it fits together, logic, reference, comments). Learns the project's own documentation system first and extends it. Moves long comment blocks into doc pages and leaves a pointer. Changes no code.

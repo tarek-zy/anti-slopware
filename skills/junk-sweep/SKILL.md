@@ -1,9 +1,9 @@
 ---
 name: junk-sweep
-description: Finds files a coding session left behind and caches that only waste disk space - review screenshots, scratch scripts, logs, backup files, build output - shows them with sizes, and removes them only after approval. Never touches tracked files, referenced files, secrets or user data. Use when the user asks to clean up a workspace or project folder, free disk space, remove leftover screenshots, temporary files or build caches, or types /junk-sweep or /anti-slopware junk.
+description: Finds files a coding session left behind and caches that only waste disk space - review screenshots, scratch scripts, throwaway logs, build output - shows them with sizes, and removes them only after approval. Tells a useless cache from a backup, and a throwaway debug log from a log that matters. Never touches backups, application or audit logs, tracked files, referenced files, secrets or user data. Use when the user asks to clean up a workspace or project folder, free disk space, remove leftover screenshots, temporary files or build caches, or types /junk-sweep or /anti-slopware junk.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # junk-sweep
@@ -27,6 +27,7 @@ A file is a candidate only if it is in one of these two groups **and** passes ev
 **Regenerable**: output that a command recreates.
 
 - Build output and tool caches: `build/`, `dist/`, `out/`, `target/`, `.dart_tool/`, `.gradle/`, `.next/`, `coverage/`, `__pycache__/`, `.pytest_cache/`, `.mypy_cache/`, `.ruff_cache/`, `*.pyc`.
+- Tool caches kept inside a dependency folder, such as `node_modules/.cache/`. The cache is a candidate; the dependency folder around it is not.
 - System files: `.DS_Store`, `Thumbs.db`.
 
 Confirm each is really generated: it is ignored by git or untracked, and the project has the tool that produces it. A folder named `build` that holds hand-written files is not a candidate.
@@ -34,9 +35,39 @@ Confirm each is really generated: it is ignored by git or untracked, and the pro
 **Session leftovers**: files made while working that are not part of the project.
 
 - Screenshots and screen recordings: `Screenshot*`, `Screen Recording*`, review captures.
-- Scratch files: `tmp_*`, `scratch*`, `debug*`, `output.txt`, `nohup.out`, one-off scripts in the project root.
-- Logs: `*.log`.
-- Backups and merge leftovers: `*.bak`, `*.orig`, `*.rej`, `*~`, `*.swp`.
+- Scratch files: `tmp_*`, `scratch*`, `output.txt`, one-off scripts in the project root.
+- Throwaway logs: see "Logs" below. A `.log` ending alone decides nothing.
+- Editor and merge leftovers: `*.orig`, `*.rej`, `*~`, `*.swp`, but only when "Copies and backups" below says the content exists elsewhere.
+
+## Logs
+
+A log can be noise from a test run or the only record of what happened in production. Work out which before listing it. Decide from evidence, in this order:
+
+1. **Who writes it.** Search the code and configuration for the path. A file the application's logging is configured to write is an application log.
+2. **What kind of record it is.** Names and folders such as `audit`, `access`, `security`, `transactions`, `payments`, `deploy`, `migration` mark records people rely on later.
+3. **What is in it.** Read the first and last lines to classify it. A crash, a stack trace or error-level entries are evidence someone may still need. A file of debug lines from one local run is not. Never copy log lines into your output: logs often hold personal data and secrets.
+4. **How it is managed.** Rotated files (`app.log.1`, `app.log.2.gz`) belong to a rotation policy. Leave them to it.
+
+| Throwaway (candidate) | Matters (never a candidate) |
+|---|---|
+| Debug output from a local or agent session | Application and server logs |
+| Package-manager and build-tool error dumps (`npm-debug.log`, `yarn-error.log`) | Audit, access, security and transaction logs |
+| Captured output of a test run or a one-off command (`nohup.out`, `test-run.log`) | Deploy and migration records |
+| Empty log files | Crash reports and logs containing errors or stack traces |
+| | Rotated logs, and any log tracked by git |
+
+List the logs that matter under "Logs kept", with a one-line reason and a flag on any that contain errors. If one is very large, suggest rotation or compression. Do not do it.
+
+Unsure which kind it is: "Not sure", and leave it.
+
+## Copies and backups
+
+A backup exists so that something can be recovered. It is never junk because of its name.
+
+- **Never a candidate**: `*.bak`, `*.backup`, `*.old`, `backup/` and `backups/` folders, database dumps (`*.sql`, `*.dump`), archives.
+- **Editor and merge leftovers** (`*.orig`, `*.rej`, `*~`, `*.swp`) are candidates only when you have compared them and the content exists elsewhere: the file is identical to the file it was copied from, or to a version committed in git. If it differs, it may hold work that exists nowhere else: keep it.
+
+List what you kept under "Backups kept". If backups take a lot of space, say so and let the user decide.
 
 ## 3. Checks every candidate must pass
 
@@ -62,6 +93,10 @@ Session leftovers (<size>):
   - <path> <size> <why it is a leftover> <cannot be recovered | recoverable from <where>>
 Dependency folders (not removed unless you name them):
   - <path> <size>
+Logs kept:
+  - <path> <size> <why it matters> <contains errors, if so>
+Backups kept:
+  - <path> <size> <what it appears to back up>
 Tracked, looks like junk (left alone):
   - <path>: remove with `git rm` if you agree
 Not sure (left alone):
