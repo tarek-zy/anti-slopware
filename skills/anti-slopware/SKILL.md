@@ -1,9 +1,9 @@
 ---
 name: anti-slopware
-description: Improves code quality without changing behaviour. Removes duplicated and useless code, simplifies verbose code, and makes code easier to read, edit and navigate. Three levels - easy (duplication only), medium (plus dead and useless code), hard (plus simplifying, clear naming and organisation). Use when the user asks to clean up, deslop, dedupe, simplify, tidy or reorganise code, to make code more readable or maintainable, to remove dead code or AI slop, or types /anti-slopware. Two modes - guard (prevents slop in code as it is written; use when the user asks for guard mode, slop-free code, or to keep new code clean) and fix (cleans existing code, from the current change to a whole project).
+description: Improves code quality without changing behaviour. Removes duplicated and useless code, simplifies verbose code, and makes code easier to read, edit and navigate. Three levels - easy (duplication only), medium (plus dead and useless code), hard (plus simplifying, clear naming and organisation). Includes bug checks for Python, JavaScript, TypeScript, Java, C#, C, C++, Go, Rust, PHP and Dart. Use when the user asks to clean up, deslop, dedupe, simplify, tidy or reorganise code, to make code more readable or maintainable, to remove dead code or AI slop, or types /anti-slopware. Two modes - guard (prevents slop in code as it is written; use when the user asks for guard mode, slop-free code, or to keep new code clean) and fix (cleans existing code, from the current change to a whole project).
 license: MIT
 metadata:
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 # anti-slopware
@@ -61,7 +61,7 @@ Read the code in scope and every caller of anything you might change. List candi
 
 Before listing something as unused, search the whole repository for it, including strings, config, templates and build files. Code reached by reflection, registration, plugin entry points, serialisation or public export is not unused.
 
-For C files in scope, also run [references/lang-c.md](references/lang-c.md).
+Then run the language checks: read [references/languages.md](references/languages.md) and the file it names for each language in scope. They report bugs as findings, and list what is not slop in that language.
 
 ## 5. Apply
 

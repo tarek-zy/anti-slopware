@@ -1,22 +1,18 @@
 # C checks
 
-Run these on C files in scope. They produce **findings**, reported separately from cleanup. Fix a finding only when the user asks: a fix changes behaviour.
+Use with [languages.md](languages.md).
 
-## Use tools first
-
-Reading code misses memory bugs. Use what is installed, and say which tools ran and which were missing.
+## Build and tools
 
 | Tool | Command | Finds |
 |---|---|---|
-| Compiler warnings | `cc -Wall -Wextra -Wpedantic` | Uninitialised use, format mismatches, implicit conversions |
-| AddressSanitizer | `cc -g -fsanitize=address,undefined` then run the tests | Use-after-free, double free, overflows, leaks, undefined behaviour |
+| Compiler | `cc -Wall -Wextra -Wpedantic -fsyntax-only <files>` | Syntax errors, uninitialised use, format mismatches, implicit conversions |
+| AddressSanitizer | `cc -g -fsanitize=address,undefined`, then run the tests | Use-after-free, double free, overflows, leaks, undefined behaviour |
 | Valgrind | `valgrind --leak-check=full --error-exitcode=1 <test binary>` | Leaks, invalid reads and writes, uninitialised reads |
 | clang-tidy | `clang-tidy <files> --` | Static bug patterns |
 | cppcheck | `cppcheck --enable=warning,portability <files>` | Static bug patterns |
 
-Sanitizers and Valgrind only see paths the tests execute. Name the paths that were not executed.
-
-## Then read for these
+## Frequent bugs
 
 For each allocation, trace every path to its release.
 
@@ -25,24 +21,18 @@ For each allocation, trace every path to its release.
 - **Leak**: early `return` between allocation and release; overwritten pointer; `realloc` result assigned straight to the original pointer.
 - **Unchecked allocation**: `malloc`, `calloc`, `realloc`, `strdup` result used without a null check.
 - **Buffer overflow**: `strcpy`, `strcat`, `sprintf`, `gets`; `strncpy` without termination; index from input with no bound check; off-by-one on the terminator.
-- **Size arithmetic**: `malloc(n * size)` with no overflow check; `sizeof` of a pointer where the pointee was meant; signed/unsigned mix in a length.
+- **Size arithmetic**: `malloc(n * size)` with no overflow check; `sizeof` of a pointer where the pointee was meant; signed and unsigned mixed in a length.
 - **Format string**: non-literal passed as the format to `printf`-family functions.
 - **Uninitialised read**: struct or buffer read before every field is set.
 - **Unchecked return**: `read`, `write`, `fread`, `fopen`, `snprintf` results ignored where failure matters.
+- **Integer overflow**: signed overflow is undefined behaviour; check before arithmetic on sizes and indexes.
+- **Macro pitfalls**: arguments evaluated twice, missing parentheses, multi-statement macros without `do { } while (0)`.
 
-## Cleanup interactions
+## Not slop in C
 
-- Do not merge two cleanup blocks if ownership differs between the paths.
-- Do not remove a null check before `free`-like project functions unless the function is documented to accept null.
-- Do not remove `ptr = NULL` after `free`. It is not useless.
-- Removing an "unused" variable can remove a side effect in its initialiser. Check.
-
-## Report
-
-```
-C findings: <n> (tools run: <list>; not available: <list>)
-  - <file>:<line> <kind>: <one line>. Confirmed by <tool> | by reading only.
-Paths not executed by any test: <list>
-```
-
-Never write "memory safe". Write what ran and what it found.
+- `ptr = NULL` after `free`.
+- A null check before a project `free`-like function, unless it is documented to accept null.
+- Two cleanup blocks whose ownership differs between paths. Do not merge them.
+- An "unused" variable whose initialiser has a side effect.
+- `(void)x;` and header guards.
+- Functions that look unused but are exported in a header or referenced from a linker script or function-pointer table.

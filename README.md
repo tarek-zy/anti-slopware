@@ -165,7 +165,26 @@ Two rewrites `hard` refused in that file, because they change results:
 
 ## Language checks
 
-**C:** use-after-free, double free, leaks, overflows, unchecked allocations, format strings. It runs AddressSanitizer, Valgrind, clang-tidy and cppcheck when installed, and reports which ones ran. See [lang-c.md](skills/anti-slopware/references/lang-c.md) and [`examples/c`](examples/c).
+Cleanup is one job. Finding bugs is another. For each language in your code, the skill first checks that the code builds, runs the standard tools that are installed, then reads for the bugs that language is known for. It reports them as findings and fixes them only if you ask, because a fix changes behaviour.
+
+| Language | Tools it runs when installed | Examples of what it looks for |
+|---|---|---|
+| Python | compileall, Ruff, mypy or Pyright, Vulture, Bandit | Mutable default arguments, unawaited coroutines, broad `except`, unsafe `eval` and `pickle` |
+| JavaScript, TypeScript | `node --check`, `tsc`, ESLint, Knip | Missing `await`, loose equality, stale closures in hooks, `any` and `!` hiding errors |
+| Java | javac, SpotBugs, Error Prone, PMD | Null dereference, `==` on strings, unclosed resources, thread-unsafe shared state |
+| C# | `dotnet build` analyzers, `dotnet format` | `async void`, blocking on `.Result`, undisposed objects, LINQ enumerated twice |
+| C | compiler warnings, AddressSanitizer, Valgrind, clang-tidy, cppcheck | Use-after-free, double free, leaks, buffer overflows |
+| C++ | sanitizers, clang-tidy, cppcheck | Dangling references, iterator invalidation, use-after-move, slicing |
+| Go | `go vet`, race detector, Staticcheck, govulncheck | Ignored errors, shadowed `err`, goroutine leaks, data races |
+| Rust | `cargo check`, Clippy, Miri, cargo audit | `unwrap` on recoverable errors, unjustified `unsafe`, locks held across `.await` |
+| PHP | `php -l`, PHPStan, Psalm | Loose comparison, SQL injection, unescaped output |
+| Dart, Flutter | `dart analyze`, `flutter test` | `BuildContext` after `await`, undisposed controllers, futures created in `build` |
+
+Every language also gets the checks for mistakes AI-written code makes everywhere: invented APIs, wrong signatures, swallowed errors, off-by-one, leaked resources, injection and secrets in code.
+
+Each language file also lists what is **not** slop there, such as functions a framework finds by name, so cleanup leaves them alone. Details: [languages.md](skills/anti-slopware/references/languages.md).
+
+It reports which tools ran and which were missing, and it never claims your code is bug-free.
 
 ## Skills
 

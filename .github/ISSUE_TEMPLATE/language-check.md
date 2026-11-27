@@ -10,4 +10,4 @@ labels: enhancement, good first issue
 
 **Tools that find them** (linters, sanitizers, analyzers):
 
-**Will you write it?** See `skills/anti-slopware/references/lang-c.md` for the format.
+**Will you write it?** See an existing file such as `skills/anti-slopware/references/lang-go.md` for the format.

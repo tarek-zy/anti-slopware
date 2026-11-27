@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.0
+
+- Language checks for Python, JavaScript and TypeScript, Java, C#, C++, Go, Rust, PHP, and Dart and Flutter, alongside C.
+- Shared method for every language: build first, run installed tools, read for known bugs, report findings separately.
+- Checks for mistakes AI-written code makes in any language.
+- Each language lists what is not slop there, so cleanup leaves it alone.
+
 ## 0.3.0
 
 - Two named modes: `guard` (prevents slop while code is written, stays on for the session, self-checks before finishing) and `fix` (cleans existing code).

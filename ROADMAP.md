@@ -4,7 +4,8 @@
 
 Shipped one skill at a time, each with examples and tests.
 
-- [x] `anti-slopware`: duplicated, useless, verbose, unclear and disorganised code; C checks
+- [x] `anti-slopware`: guard and fix modes; duplicated, useless, verbose, unclear and disorganised code
+- [x] Language checks: Python, JavaScript and TypeScript, Java, C#, C, C++, Go, Rust, PHP, Dart and Flutter
 - [ ] `slim-pr`: PR descriptions as what / why / how to test / risks; flags noise in the diff
 - [ ] `test-slop`: assertions that cannot fail, over-mocking, copy-pasted cases
 - [ ] `dep-check`: unused dependencies, imports of packages that do not exist
@@ -14,7 +15,8 @@ Shipped one skill at a time, each with examples and tests.
 ## v1.1
 
 - Hook that checks each edit as code is written
-- Language checks: Python, JavaScript/TypeScript, Dart/Flutter
+- Language checks: Kotlin, Swift, Ruby, SQL, shell scripts
+- A test set for each language, with planted bugs and traps, scored automatically
 
 ## v1.2
 
