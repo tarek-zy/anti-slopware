@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.10.0
+
+- `review-map` skill: a reading guide for the human reviewing a change. Orders the files, gives each careful file one question, marks what can be skimmed and what does not belong. 250 words at most, no verdict.
+
 ## 0.9.0
 
 - `junk-sweep` skill: finds session leftovers and regenerable caches, lists them with sizes, and removes them only after approval. Tracked files, referenced files, secrets, user data and editor settings are never candidates.
