@@ -1,6 +1,6 @@
 # Roadmap
 
-## v1 (in progress)
+## v1 (shipped)
 
 Shipped one skill at a time, each with examples and tests.
 
@@ -10,7 +10,7 @@ Shipped one skill at a time, each with examples and tests.
 - [x] `test-slop`: assertions that cannot fail, over-mocking, copy-pasted cases
 - [x] `dep-check`: unused dependencies, imports of packages that do not exist
 - [x] `error-slop`: swallowed exceptions, catch-everything blocks
-- [ ] `junk-sweep`: leftover screenshots, temp files and regenerable build caches; lists first, deletes after approval
+- [x] `junk-sweep`: leftover screenshots, temp files and regenerable build caches; lists first, deletes after approval
 
 ## v1.1
 

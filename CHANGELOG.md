@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.9.0
+
+- `junk-sweep` skill: finds session leftovers and regenerable caches, lists them with sizes, and removes them only after approval. Tracked files, referenced files, secrets, user data and editor settings are never candidates.
+- All six v1 skills are now shipped.
+
 ## 0.8.0
 
 - `error-slop` skill: finds handlers that hide failures and separates them from deliberate handling such as bounded retries, boundary handlers and documented fallbacks. Reports by default; `fix` applies the smallest change.

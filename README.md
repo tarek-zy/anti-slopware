@@ -131,6 +131,7 @@ Run it as `/anti-slopware`.
 | `/anti-slopware all` | Fix the whole project, one folder at a time |
 | `/anti-slopware report` | List findings, change nothing |
 | `/anti-slopware pr` or `/slim-pr` | Write or trim the pull request description |
+| `/anti-slopware junk` or `/junk-sweep` | List leftover files and caches with sizes; add `clean` to remove them after approval |
 | `/anti-slopware errors` or `/error-slop` | Report error handling that hides failures; add `fix` to change it |
 | `/anti-slopware deps` or `/dep-check` | Report unused, missing and unverifiable dependencies; add `fix` to edit the manifest |
 | `/anti-slopware tests` or `/test-slop` | Report tests that prove nothing; add `fix` to strengthen or remove them |
@@ -213,7 +214,7 @@ It reports which tools ran and which were missing, and it never claims your code
 | `test-slop` | Finds tests that prove nothing, and proves it by breaking the code and showing the test still passes | Shipped |
 | `dep-check` | Unused and undeclared dependencies, and AI-invented package names. Never adds a package without evidence it exists | Shipped |
 | `error-slop` | Error handling that hides failures: empty catches, silent defaults, fake success, lost causes. Leaves deliberate handling alone | Shipped |
-| `junk-sweep` | Leftover screenshots, temp files, build caches | Planned |
+| `junk-sweep` | Leftover screenshots, scratch files, logs and build caches. Lists with sizes, removes only after approval, never touches tracked or referenced files, secrets or user data | Shipped |
 
 More in [ROADMAP.md](ROADMAP.md). Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
