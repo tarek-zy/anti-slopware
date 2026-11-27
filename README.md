@@ -26,7 +26,7 @@ anti-slopware improves the quality of that code. It removes the filler, then mak
 
 ## What is inside
 
-<p align="center"><img src="assets/skills.svg" alt="The six skills: anti-slopware, slim-pr, test-slop, dep-check, error-slop and junk-sweep" width="100%"></p>
+<p align="center"><img src="assets/skills.svg" alt="The seven skills: anti-slopware, slim-pr, review-map, test-slop, dep-check, error-slop and junk-sweep" width="100%"></p>
 
 ## What it improves
 
@@ -62,6 +62,8 @@ AI can write code faster than people can read it. When reviews turn into skimmin
 - **Tests left alone.** It does not edit tests in the same run as the code they protect.
 
 The `slim-pr` skill then writes the pull request description: what changed, why, how to test it and the risks, in 200 words or fewer. It drops claims the diff does not support, never trims a breaking change, and lists stray files and unrelated edits that should not be in the branch.
+
+The `review-map` skill writes a reading guide for the reviewer: which files to read first and in what order, one question to ask of each, what is mechanical and can be skimmed, and the three riskiest spots. It points; it never says the change is good.
 
 ## Before and after
 
@@ -143,6 +145,7 @@ Run it as `/anti-slopware`.
 | `/anti-slopware all` | Fix the whole project, one folder at a time |
 | `/anti-slopware report` | List findings, change nothing |
 | `/anti-slopware pr` or `/slim-pr` | Write or trim the pull request description |
+| `/anti-slopware map` or `/review-map` | A reading guide for the reviewer: where to start, what needs careful eyes, what to skim |
 | `/anti-slopware junk` or `/junk-sweep` | List leftover files and caches with sizes; add `clean` to remove them after approval |
 | `/anti-slopware errors` or `/error-slop` | Report error handling that hides failures; add `fix` to change it |
 | `/anti-slopware deps` or `/dep-check` | Report unused, missing and unverifiable dependencies; add `fix` to edit the manifest |
@@ -233,7 +236,7 @@ It reports which tools ran and which were missing, and it never claims your code
 
 ## Roadmap
 
-<p align="center"><img src="assets/roadmap.svg" alt="v1 is shipped with six skills, ten languages and guard and fix modes. Next: automatic checks on every edit, more languages, then split-pr, review-map, clean-commits, slop-report and mem-safe." width="100%"></p>
+<p align="center"><img src="assets/roadmap.svg" alt="v1 is shipped with seven skills, ten languages and guard and fix modes. Next: automatic checks on every edit, more languages, then split-pr, clean-commits, slop-report and mem-safe." width="100%"></p>
 
 Details in [ROADMAP.md](ROADMAP.md). Contributions are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md). Adding a language check is a good first one.
 

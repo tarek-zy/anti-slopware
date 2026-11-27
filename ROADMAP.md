@@ -10,6 +10,7 @@ Shipped one skill at a time, each with examples and tests.
 - [x] `test-slop`: assertions that cannot fail, over-mocking, copy-pasted cases
 - [x] `dep-check`: unused dependencies, imports of packages that do not exist
 - [x] `error-slop`: swallowed exceptions, catch-everything blocks
+- [x] `review-map`: a reading guide for the reviewer
 - [x] `junk-sweep`: leftover screenshots, temp files and regenerable build caches; lists first, deletes after approval
 
 ## v1.1
@@ -21,7 +22,6 @@ Shipped one skill at a time, each with examples and tests.
 ## v1.2
 
 - `split-pr`: break one large change into small reviewable PRs
-- `review-map`: a reading guide for the reviewer
 
 ## v1.3
 
