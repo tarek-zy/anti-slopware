@@ -4,7 +4,7 @@
 
 Shipped one skill at a time, each with examples and tests.
 
-- [x] `anti-slopware`: duplicated, useless and verbose code; C checks
+- [x] `anti-slopware`: duplicated, useless, verbose, unclear and disorganised code; C checks
 - [ ] `slim-pr`: PR descriptions as what / why / how to test / risks; flags noise in the diff
 - [ ] `test-slop`: assertions that cannot fail, over-mocking, copy-pasted cases
 - [ ] `dep-check`: unused dependencies, imports of packages that do not exist

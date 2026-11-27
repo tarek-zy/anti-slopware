@@ -1,3 +1,6 @@
+BULK_ORDER_MIN_UNITS = 10
+
+
 def calculate_order_total(items, tax_rate):
     total = 0
     for item in items:
@@ -22,7 +25,7 @@ def count_units(items):
 
 
 def is_bulk_order(items):
-    return count_units(items) >= 10
+    return count_units(items) >= BULK_ORDER_MIN_UNITS
 
 
 def get_discount(customer):

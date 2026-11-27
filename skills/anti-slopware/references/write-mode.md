@@ -20,8 +20,12 @@ Rules for code you are about to write. The level sets how many apply: `easy` is 
 - No debug output, no commented-out alternatives, no placeholder stubs.
 - No unused imports, variables or helpers. Remove what your own change orphans.
 
-## hard: write the short clear version first
+## hard: write the clear version first
 
+- Names say what a thing holds or does. No `data2`, `tmp` or `flag`.
+- A number or string with a meaning gets a named constant.
+- One job per function. Put new code beside the code it belongs with, where a reader would look for it.
+- One pattern per job. Use the one the file already uses.
 - Guard clauses over nesting.
 - The language's standard idiom over a hand-written loop, where the codebase already uses that idiom.
 - No abstraction until there are two real users of it.

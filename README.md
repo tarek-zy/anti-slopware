@@ -2,14 +2,14 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
-  <img src="assets/banner-light.svg" alt="anti-slopware: less code, same behaviour" width="100%">
+  <img src="assets/banner-light.svg" alt="anti-slopware: cleaner code, same behaviour" width="100%">
 </picture>
 
 <br>
 
-**Skills for AI coding agents that delete duplicated, useless and over-verbose code,<br>and prove nothing broke.**
+**Skills for AI coding agents that make code easier to read, edit and navigate,<br>and prove nothing broke.**
 
-[Install](#install) · [Use](#use) · [Levels](#levels) · [Proof](#proof) · [Roadmap](ROADMAP.md)
+[What it improves](#what-it-improves) · [Install](#install) · [Use](#use) · [Levels](#levels) · [Proof](#proof) · [Roadmap](ROADMAP.md)
 
 [![verify](https://github.com/tarek-zy/anti-slopware/actions/workflows/verify.yml/badge.svg)](https://github.com/tarek-zy/anti-slopware/actions/workflows/verify.yml)
 [![license](https://img.shields.io/github/license/tarek-zy/anti-slopware?style=flat-square&color=1a7f37)](LICENSE)
@@ -22,7 +22,17 @@
 
 AI agents write code fast, and a lot of it is filler: the same function twice, imports nobody uses, comments that repeat the line below them, five levels of nesting where one would do. A human still has to review all of it.
 
-anti-slopware removes that filler. It runs your tests before and after, and reverts any change that breaks them.
+anti-slopware improves the quality of that code. It removes the filler, then makes what is left clearer and better organised. It runs your tests before and after, and reverts any change that breaks them.
+
+## What it improves
+
+| Goal | What changes |
+|---|---|
+| **Easier to read** | Flat control flow instead of deep nesting, names that say what a thing holds, named constants instead of bare numbers |
+| **Easier to edit** | One copy of each rule, no dead code to step around, functions that do one job |
+| **Better organised** | Related code kept together, one pattern per job, consistent with the rest of your project |
+
+This is not a minifier. Fewer lines is a side effect, not the goal. When a named constant or a small helper makes code clearer, it adds one, and it never trades clarity for brevity.
 
 ## Before and after
 
@@ -64,6 +74,8 @@ def get_discount(customer):
     return 0
 ```
 
+Same result for every input. No nesting to keep in your head.
+
 </td>
 </tr>
 </table>
@@ -93,7 +105,7 @@ Run it as `/anti-slopware`.
 |---|---|
 | `/anti-slopware` | Clean the current changes at `medium` |
 | `/anti-slopware easy` | Duplication only |
-| `/anti-slopware hard src/parser.c` | Everything, one file |
+| `/anti-slopware hard src/parser.c` | Everything, including naming and organisation, one file |
 | `/anti-slopware report` | List findings, change nothing |
 | `/anti-slopware write hard` | Apply the rules to code about to be written |
 
@@ -101,11 +113,11 @@ Or ask in plain words: "clean up this branch", "remove the dead code in `utils/`
 
 ## Levels
 
-| Level | Removes | Applies |
+| Level | Fixes | Applies |
 |---|---|---|
 | `easy` | Duplicated code | Directly |
 | `medium` | + unused, unreachable and leftover code, comments that restate the code | After you approve the list |
-| `hard` | + needless nesting, hand-written loops, single-use abstractions | After you approve the list |
+| `hard` | + needless nesting and single-use abstractions, misleading names, unnamed constants, functions that do several jobs, scattered related code | After you approve the list |
 
 Full definitions: [levels.md](skills/anti-slopware/references/levels.md).
 
@@ -115,6 +127,7 @@ Full definitions: [levels.md](skills/anti-slopware/references/levels.md).
 - Remove or change anything public.
 - Edit generated, vendored or ignored files, or anything outside the scope you gave.
 - Make code shorter at the cost of clarity.
+- Rename or reorganise to suit its own taste. Your project's style wins.
 - Work without a safety net. With no tests covering the code, it reports and stops.
 - Say your code is bug-free. It says what was checked and what was not.
 
@@ -127,8 +140,10 @@ $ python3 examples/verify.py
 before   96 lines  tests: pass
 easy     86 lines  tests: pass
 medium   56 lines  tests: pass
-hard     47 lines  tests: pass
+hard     50 lines  tests: pass
 ```
+
+`hard` is not the shortest possible version. It added a named constant, `BULK_ORDER_MIN_UNITS`, in place of a bare `10`, because that reads better.
 
 Two rewrites `hard` refused in that file, because they change results:
 
@@ -145,7 +160,7 @@ Two rewrites `hard` refused in that file, because they change results:
 
 | Skill | Does | Status |
 |---|---|---|
-| `anti-slopware` | Duplicated, useless and verbose code | Shipped |
+| `anti-slopware` | Duplicated, useless, verbose, unclear and disorganised code | Shipped |
 | `slim-pr` | Short, clear PR descriptions | Next |
 | `test-slop` | Tests that prove nothing | Planned |
 | `dep-check` | Unused and non-existent dependencies | Planned |

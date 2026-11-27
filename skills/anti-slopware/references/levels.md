@@ -47,9 +47,11 @@ Each level includes the ones above it.
 - Defensive code with a test that exercises it.
 - Logging that is part of the product's behaviour.
 
-## hard: over-verbose code
+## hard: verbose, unclear and disorganised code
 
-**Counts**
+The aim is code a newcomer can read top to bottom, change in one place, and find things in. Line count is not the measure.
+
+**Verbose**
 
 - Nested conditionals that flatten with early returns or guard clauses.
 - `if cond: return True else: return False` and its relatives.
@@ -59,9 +61,23 @@ Each level includes the ones above it.
 - Repeated string building that a format call expresses directly.
 - Boolean expressions that simplify with no change in short-circuit behaviour.
 
+**Unclear**
+
+- Private names that mislead or say nothing (`data2`, `tmp`, `flag`, `x` outside a short loop). Rename to what the thing holds or does, in the file's existing naming style.
+- Numbers and strings that carry a meaning (`10` as a bulk threshold, `86400`). Give each a named constant, or use the one that already exists.
+- A long condition whose intent is not obvious. Name it with a local variable.
+- A comment that is needed only because the code under it is unclear. Make the code clear, then remove the comment.
+
+**Disorganised**
+
+- A private function that does several separate jobs, each with an obvious name. Split it into helpers called in order.
+- Related code scattered through one file. Put a helper beside its only caller; keep constants together.
+- Two patterns for one job inside one file (two ways to build the same error, two ways to read the same setting). Use the one the project uses most.
+- A function that mixes levels of detail, such as business rules interleaved with string formatting. Separate them.
+
 **Test for every hard change**
 
-A reader new to the code must understand the new version faster than the old one. If that is not clearly true, leave it.
+A reader new to the code must understand the new version faster than the old one, and a future edit must touch fewer places. If that is not clearly true, leave it.
 
 **Does not count**
 
@@ -70,4 +86,12 @@ A reader new to the code must understand the new version faster than the old one
 - Replacing a loop with an idiom that changes laziness, memory use or complexity.
 - Collapsing code that is long because the problem is.
 - Performance-sensitive code where the verbose form is deliberate.
-- Renaming. Names are out of scope unless a name is false.
+- Renaming anything public, or anything referenced by a string, config, serialisation or reflection.
+- Renaming an accurate name to one you like better.
+- Splitting a function that already reads well top to bottom. Length alone is not a reason.
+- Moving code between files. Propose it; do not do it as part of a cleanup.
+- Reformatting. That is the formatter's job.
+
+**Keep the diff reviewable**
+
+Renames and moves make large diffs. Put each rename, and each move, in its own change with nothing else in it, so the reviewer can see that nothing else changed.

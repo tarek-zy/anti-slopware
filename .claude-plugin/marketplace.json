@@ -8,7 +8,7 @@
     {
       "name": "anti-slopware",
       "source": "./",
-      "description": "Removes duplicated, useless and over-verbose code without changing behaviour."
+      "description": "Improves code quality without changing behaviour: removes duplicated and useless code, simplifies verbose code, and makes code easier to read, edit and navigate."
     }
   ]
 }

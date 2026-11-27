@@ -1,14 +1,18 @@
 ---
 name: anti-slopware
-description: Finds and removes duplicated code, useless code and over-verbose code without changing behaviour. Three levels - easy (duplication only), medium (plus dead and useless code), hard (plus simplifying verbose code). Use when the user asks to clean up, deslop, dedupe, simplify or tidy code, to remove dead code or AI slop, or types /anti-slopware. Also use while writing new code when the user asks for write mode or slop-free code.
+description: Improves code quality without changing behaviour. Removes duplicated and useless code, simplifies verbose code, and makes code easier to read, edit and navigate. Three levels - easy (duplication only), medium (plus dead and useless code), hard (plus simplifying, clear naming and organisation). Use when the user asks to clean up, deslop, dedupe, simplify, tidy or reorganise code, to make code more readable or maintainable, to remove dead code or AI slop, or types /anti-slopware. Also use while writing new code when the user asks for write mode or slop-free code.
 license: MIT
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # anti-slopware
 
-Make code smaller and clearer without changing what it does. Every change must be provably safe or it is not made.
+Make code easier to read, easier to change and easier to find your way around, without changing what it does.
+
+Fewer lines is a side effect, not the goal. A change that makes code shorter but harder to follow is not made. A change that adds a line to make code clearer (a named constant, a well-named helper) is.
+
+Every change must be provably safe or it is not made.
 
 ## 1. Read the request
 
@@ -25,7 +29,7 @@ Levels are cumulative:
 
 - **easy**: duplicated code only.
 - **medium**: easy + useless code.
-- **hard**: medium + over-verbose code.
+- **hard**: medium + verbose, unclear and disorganised code.
 
 Exact definitions, with what counts and what does not, are in [references/levels.md](references/levels.md). Read it before finding anything.
 
@@ -80,6 +84,7 @@ Removed duplication: <n>
   - <file>:<lines> <what, in a few words>
 Removed useless code: <n>
 Simplified: <n>
+Clarified and organised: <n>
 Skipped: <n>
   - <file>:<lines> <why>
 Checks: <command> <result before> -> <result after>
