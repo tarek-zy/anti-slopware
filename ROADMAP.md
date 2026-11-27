@@ -6,7 +6,7 @@ Shipped one skill at a time, each with examples and tests.
 
 - [x] `anti-slopware`: guard and fix modes; duplicated, useless, verbose, unclear and disorganised code
 - [x] Language checks: Python, JavaScript and TypeScript, Java, C#, C, C++, Go, Rust, PHP, Dart and Flutter
-- [ ] `slim-pr`: PR descriptions as what / why / how to test / risks; flags noise in the diff
+- [x] `slim-pr`: PR descriptions as what / why / how to test / risks; flags noise in the diff
 - [ ] `test-slop`: assertions that cannot fail, over-mocking, copy-pasted cases
 - [ ] `dep-check`: unused dependencies, imports of packages that do not exist
 - [ ] `error-slop`: swallowed exceptions, catch-everything blocks

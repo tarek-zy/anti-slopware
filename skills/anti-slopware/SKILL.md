@@ -3,7 +3,7 @@ name: anti-slopware
 description: Improves code quality without changing behaviour. Removes duplicated and useless code, simplifies verbose code, makes code easier to read, edit and navigate, and keeps every change small and explained so humans can review it. Three levels - easy (duplication only), medium (plus dead and useless code), hard (plus simplifying, clear naming and organisation). Includes bug checks for Python, JavaScript, TypeScript, Java, C#, C, C++, Go, Rust, PHP and Dart. Use when the user asks to clean up, deslop, dedupe, simplify, tidy or reorganise code, to make code more readable or maintainable, to remove dead code or AI slop, or types /anti-slopware. Two modes - guard (prevents slop in code as it is written; use when the user asks for guard mode, slop-free code, or to keep new code clean) and fix (cleans existing code, from the current change to a whole project).
 license: MIT
 metadata:
-  version: "0.4.1"
+  version: "0.5.0"
 ---
 
 # anti-slopware
@@ -15,6 +15,14 @@ Fewer lines is a side effect, not the goal. A change that makes code shorter but
 Every change must be provably safe or it is not made.
 
 ## 1. Read the request
+
+If the first argument names another skill in this plugin, use that skill instead and pass the rest of the arguments to it:
+
+| Argument | Skill |
+|---|---|
+| `pr` | `slim-pr` |
+
+Otherwise continue here.
 
 Two modes. **Guard** stops slop from being written. **Fix** removes it from code that exists. They are independent: fix can run while guard is on.
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0
+
+- `slim-pr` skill: writes or trims a pull request description to what, why, how to test and risks; drops unsupported claims; keeps breaking changes; flags noise in the diff.
+
 ## 0.4.1
 
 From the first independent test run:

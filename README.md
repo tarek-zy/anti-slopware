@@ -54,7 +54,7 @@ AI can write code faster than people can read it. When reviews turn into skimmin
 - **Batches you can read.** A whole-project cleanup goes folder by folder and stops to ask when a batch gets large.
 - **Tests left alone.** It does not edit tests in the same run as the code they protect.
 
-A skill for writing short, clear pull request descriptions (`slim-pr`) is next on the [roadmap](ROADMAP.md).
+The `slim-pr` skill then writes the pull request description: what changed, why, how to test it and the risks, in 200 words or fewer. It drops claims the diff does not support, never trims a breaking change, and lists stray files and unrelated edits that should not be in the branch.
 
 ## Before and after
 
@@ -130,6 +130,7 @@ Run it as `/anti-slopware`.
 | `/anti-slopware hard src/parser.c` | Everything, including naming and organisation, one file |
 | `/anti-slopware all` | Fix the whole project, one folder at a time |
 | `/anti-slopware report` | List findings, change nothing |
+| `/anti-slopware pr` or `/slim-pr` | Write or trim the pull request description |
 | `/anti-slopware guard` | Turn guard mode on for this session |
 | `/anti-slopware guard hard` | Guard mode with the strictest rules |
 
@@ -205,7 +206,7 @@ It reports which tools ran and which were missing, and it never claims your code
 | Skill | Does | Status |
 |---|---|---|
 | `anti-slopware` | Duplicated, useless, verbose, unclear and disorganised code | Shipped |
-| `slim-pr` | Short, clear PR descriptions | Next |
+| `slim-pr` | PR descriptions a reviewer can read in a minute; flags noise in the diff and claims the diff does not support | Shipped |
 | `test-slop` | Tests that prove nothing | Planned |
 | `dep-check` | Unused and non-existent dependencies | Planned |
 | `error-slop` | Swallowed and hidden errors | Planned |
