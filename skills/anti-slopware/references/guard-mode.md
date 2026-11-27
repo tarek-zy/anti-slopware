@@ -43,7 +43,14 @@ Check your own diff the way fix mode would, at the same level:
 2. Search for anything you wrote twice, or that already existed.
 3. Run the project's checks.
 
+4. Remove anything your own work left behind: tool caches, scratch files, temporary output.
+
 Fix what you find before reporting. Do not mention the check unless it changed something or a check failed.
+
+## Stay inside the request
+
+- Change only what the task needs. A weakness you notice in existing code, such as a shared helper that mishandles an edge case, is a finding: report it in one line and leave the code alone. Changing a shared helper changes every caller.
+- "Robust", "production-ready" and "bulletproof" do not ask for new machinery. Meet them with correct handling of the inputs the task names, errors that reach the caller, and tests. Do not add retries, temporary files, type checks on internal callers or return values nobody asked for.
 
 ## What guard does not do
 
