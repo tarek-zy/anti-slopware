@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.12.0
+
+- `organize` skill: improves project structure without changing behaviour. Plans first; then one pure move at a time, with old import paths kept working and tests left unchanged.
+
 ## 0.11.0
 
 - `split-pr` skill: plans how to break one oversized branch into small pull requests, one purpose each, with dependencies, merge order and a drop list. Plan only; it does not change the branch.
