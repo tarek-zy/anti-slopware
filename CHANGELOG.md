@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.0
+
+- Two named modes: `guard` (prevents slop while code is written, stays on for the session, self-checks before finishing) and `fix` (cleans existing code).
+- `all` runs fix mode across a whole project in reviewable batches.
+- `write` still works as an older name for `guard`.
+
 ## 0.2.0
 
 - `hard` now also covers unclear and disorganised code: misleading private names, unnamed constants, functions that do several jobs, scattered related code, mixed patterns.

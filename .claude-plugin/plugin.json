@@ -1,8 +1,8 @@
 {
   "name": "anti-slopware",
   "displayName": "anti-slopware",
-  "version": "0.2.0",
-  "description": "Improves code quality without changing behaviour: removes duplicated and useless code, simplifies verbose code, and makes code easier to read, edit and navigate.",
+  "version": "0.3.0",
+  "description": "anti-slopware is a plugin that helps your coding agent produce higher-quality code. It removes duplication and dead code, simplifies logic and fixes unclear names, then proves nothing changed using your own tests.",
   "author": {
     "name": "tarek-zy",
     "url": "https://github.com/tarek-zy"

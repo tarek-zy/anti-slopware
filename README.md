@@ -7,9 +7,9 @@
 
 <br>
 
-**Skills for AI coding agents that make code easier to read, edit and navigate,<br>and prove nothing broke.**
+**A plugin that helps your coding agent produce higher-quality code,<br>and proves nothing changed using your own tests.**
 
-[What it improves](#what-it-improves) · [Install](#install) · [Use](#use) · [Levels](#levels) · [Proof](#proof) · [Roadmap](ROADMAP.md)
+[What it improves](#what-it-improves) · [Two modes](#two-modes) · [Install](#install) · [Use](#use) · [Levels](#levels) · [Proof](#proof) · [Roadmap](ROADMAP.md)
 
 [![verify](https://github.com/tarek-zy/anti-slopware/actions/workflows/verify.yml/badge.svg)](https://github.com/tarek-zy/anti-slopware/actions/workflows/verify.yml)
 [![license](https://img.shields.io/github/license/tarek-zy/anti-slopware?style=flat-square&color=1a7f37)](LICENSE)
@@ -33,6 +33,15 @@ anti-slopware improves the quality of that code. It removes the filler, then mak
 | **Better organised** | Related code kept together, one pattern per job, consistent with the rest of your project |
 
 This is not a minifier. Fewer lines is a side effect, not the goal. When a named constant or a small helper makes code clearer, it adds one, and it never trades clarity for brevity.
+
+## Two modes
+
+| Mode | When | What it does |
+|---|---|---|
+| **Guard** | While the agent writes code | Stops slop before it is written. The agent reuses what exists, writes only what the task needs, and checks its own diff before saying it is done. Stays on for the whole session. |
+| **Fix** | On code that already exists | Finds and removes slop, from your current change up to the whole project, in batches small enough to review. |
+
+Use one or both. Guard keeps new code clean. Fix deals with what is already there.
 
 ## Before and after
 
@@ -103,11 +112,13 @@ Run it as `/anti-slopware`.
 
 | Command | What it does |
 |---|---|
-| `/anti-slopware` | Clean the current changes at `medium` |
+| `/anti-slopware` | Fix the current changes at `medium` |
 | `/anti-slopware easy` | Duplication only |
 | `/anti-slopware hard src/parser.c` | Everything, including naming and organisation, one file |
+| `/anti-slopware all` | Fix the whole project, one folder at a time |
 | `/anti-slopware report` | List findings, change nothing |
-| `/anti-slopware write hard` | Apply the rules to code about to be written |
+| `/anti-slopware guard` | Turn guard mode on for this session |
+| `/anti-slopware guard hard` | Guard mode with the strictest rules |
 
 Or ask in plain words: "clean up this branch", "remove the dead code in `utils/`".
 

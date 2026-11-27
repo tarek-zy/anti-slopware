@@ -1,6 +1,10 @@
-# Write mode
+# Guard mode
 
-Rules for code you are about to write. The level sets how many apply: `easy` is the first group, `medium` adds the second, `hard` adds the third.
+Prevents slop in code you write, instead of cleaning it up afterwards. The level sets how many rules apply: `easy` is the first group, `medium` adds the second, `hard` adds the third. Default: `medium`.
+
+## Turning on
+
+Confirm in one line: `anti-slopware guard on (<level>)`. Guard stays on for the rest of the session, for every piece of code you write, until the user says `guard off`. Do not announce it again on each task.
 
 ## Before writing
 
@@ -31,6 +35,25 @@ Rules for code you are about to write. The level sets how many apply: `easy` is 
 - No abstraction until there are two real users of it.
 - No wrapper that only forwards.
 
-## After writing
+## Before saying a task is done
 
-Reread your diff as a reviewer. Delete every line the reviewer would ask "why is this here?" about. Then run the project's checks.
+Check your own diff the way fix mode would, at the same level:
+
+1. Reread every line you added. Delete each one a reviewer would ask "why is this here?" about.
+2. Search for anything you wrote twice, or that already existed.
+3. Run the project's checks.
+
+Fix what you find before reporting. Do not mention the check unless it changed something or a check failed.
+
+## What guard does not do
+
+- It does not clean code you did not write in this session. That is fix mode.
+- It does not relax the hard limits in `SKILL.md`. They apply to new code too.
+
+## Keeping guard on in every session
+
+Guard lasts one session. If the user asks for it always, offer to add this line to the project's agent instruction file (`CLAUDE.md`, `AGENTS.md` or the equivalent), and add it only after they agree:
+
+```
+Use the anti-slopware skill in guard mode at <level> for all code you write.
+```

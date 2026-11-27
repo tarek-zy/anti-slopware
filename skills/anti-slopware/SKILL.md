@@ -1,9 +1,9 @@
 ---
 name: anti-slopware
-description: Improves code quality without changing behaviour. Removes duplicated and useless code, simplifies verbose code, and makes code easier to read, edit and navigate. Three levels - easy (duplication only), medium (plus dead and useless code), hard (plus simplifying, clear naming and organisation). Use when the user asks to clean up, deslop, dedupe, simplify, tidy or reorganise code, to make code more readable or maintainable, to remove dead code or AI slop, or types /anti-slopware. Also use while writing new code when the user asks for write mode or slop-free code.
+description: Improves code quality without changing behaviour. Removes duplicated and useless code, simplifies verbose code, and makes code easier to read, edit and navigate. Three levels - easy (duplication only), medium (plus dead and useless code), hard (plus simplifying, clear naming and organisation). Use when the user asks to clean up, deslop, dedupe, simplify, tidy or reorganise code, to make code more readable or maintainable, to remove dead code or AI slop, or types /anti-slopware. Two modes - guard (prevents slop in code as it is written; use when the user asks for guard mode, slop-free code, or to keep new code clean) and fix (cleans existing code, from the current change to a whole project).
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # anti-slopware
@@ -16,14 +16,18 @@ Every change must be provably safe or it is not made.
 
 ## 1. Read the request
 
+Two modes. **Guard** stops slop from being written. **Fix** removes it from code that exists. They are independent: fix can run while guard is on.
+
 Arguments, in any order, all optional:
 
 | Argument | Meaning | Default |
 |---|---|---|
 | `easy`, `medium`, `hard` | Level (see below) | `medium` |
-| `write` | Write mode: apply the rules to code you are about to write | off (refine mode) |
+| `fix` | Fix mode: clean code that already exists | on |
+| `guard` | Guard mode: prevent slop in every piece of code you write this session | off |
+| `all` | Fix mode across the whole project | off |
 | `report` | Find and list, change nothing | off |
-| a path | File or folder to work on | current uncommitted and branch changes |
+| a path | File or folder for fix mode to work on | current uncommitted and branch changes |
 
 Levels are cumulative:
 
@@ -33,12 +37,15 @@ Levels are cumulative:
 
 Exact definitions, with what counts and what does not, are in [references/levels.md](references/levels.md). Read it before finding anything.
 
-If `write` is given, follow [references/write-mode.md](references/write-mode.md) and skip steps 2 to 7.
+If `guard` is given (or `write`, its older name), follow [references/guard-mode.md](references/guard-mode.md) and skip steps 2 to 7.
+
+Steps 2 to 7 are fix mode.
 
 ## 2. Set the scope
 
 - No path given: the files changed on this branch (`git diff` against the base branch, plus uncommitted changes). Only touch lines in, or directly entangled with, those changes.
 - Path given: that file or folder.
+- `all` given: the whole project, one folder or module at a time. Finish steps 3 to 7 for one before starting the next, so each batch is small enough to review. At `medium` and `hard`, get approval per batch. Stop and ask if a batch would change more than about 300 lines.
 - Never edit: generated files, vendored or third-party code, lock files, migrations, snapshots, anything matched by `.gitignore`.
 
 ## 3. Record a baseline

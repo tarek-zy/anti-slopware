@@ -8,7 +8,7 @@
     {
       "name": "anti-slopware",
       "source": "./",
-      "description": "Improves code quality without changing behaviour: removes duplicated and useless code, simplifies verbose code, and makes code easier to read, edit and navigate."
+      "description": "anti-slopware is a plugin that helps your coding agent produce higher-quality code. It removes duplication and dead code, simplifies logic and fixes unclear names, then proves nothing changed using your own tests."
     }
   ]
 }
