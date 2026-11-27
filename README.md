@@ -35,6 +35,7 @@ anti-slopware improves the quality of that code. It removes the filler, then mak
 | **Easier to read** | Flat control flow instead of deep nesting, names that say what a thing holds, named constants instead of bare numbers |
 | **Easier to edit** | One copy of each rule, no dead code to step around, functions that do one job |
 | **Better documented** | A file map, pages for the logic that is not obvious, docstrings in your project's style, comments that are short and correct |
+| **Less clutter on disk** | Throwaway logs, caches and leftovers removed after you approve; backups, application and audit logs, secrets and data never touched |
 | **Better organised** | Related code kept together, one pattern per job, files that each do one thing, no `utils` dumping grounds, no circular dependencies |
 
 ### Structure
