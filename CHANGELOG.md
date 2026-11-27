@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.1
+
+From the first independent test run:
+
+- Test files are no longer edited in the same run as the code they test.
+- Code with no tests is compared before and after instead of blocking the whole run.
+- The report counts lines in changed files only.
+- README section on how the plugin keeps changes reviewable by humans.
+
 ## 0.4.0
 
 - Language checks for Python, JavaScript and TypeScript, Java, C#, C++, Go, Rust, PHP, and Dart and Flutter, alongside C.

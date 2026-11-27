@@ -1,9 +1,9 @@
 ---
 name: anti-slopware
-description: Improves code quality without changing behaviour. Removes duplicated and useless code, simplifies verbose code, and makes code easier to read, edit and navigate. Three levels - easy (duplication only), medium (plus dead and useless code), hard (plus simplifying, clear naming and organisation). Includes bug checks for Python, JavaScript, TypeScript, Java, C#, C, C++, Go, Rust, PHP and Dart. Use when the user asks to clean up, deslop, dedupe, simplify, tidy or reorganise code, to make code more readable or maintainable, to remove dead code or AI slop, or types /anti-slopware. Two modes - guard (prevents slop in code as it is written; use when the user asks for guard mode, slop-free code, or to keep new code clean) and fix (cleans existing code, from the current change to a whole project).
+description: Improves code quality without changing behaviour. Removes duplicated and useless code, simplifies verbose code, makes code easier to read, edit and navigate, and keeps every change small and explained so humans can review it. Three levels - easy (duplication only), medium (plus dead and useless code), hard (plus simplifying, clear naming and organisation). Includes bug checks for Python, JavaScript, TypeScript, Java, C#, C, C++, Go, Rust, PHP and Dart. Use when the user asks to clean up, deslop, dedupe, simplify, tidy or reorganise code, to make code more readable or maintainable, to remove dead code or AI slop, or types /anti-slopware. Two modes - guard (prevents slop in code as it is written; use when the user asks for guard mode, slop-free code, or to keep new code clean) and fix (cleans existing code, from the current change to a whole project).
 license: MIT
 metadata:
-  version: "0.4.0"
+  version: "0.4.1"
 ---
 
 # anti-slopware
@@ -46,6 +46,7 @@ Steps 2 to 7 are fix mode.
 - No path given: the files changed on this branch (`git diff` against the base branch, plus uncommitted changes). Only touch lines in, or directly entangled with, those changes.
 - Path given: that file or folder.
 - `all` given: the whole project, one folder or module at a time. Finish steps 3 to 7 for one before starting the next, so each batch is small enough to review. At `medium` and `hard`, get approval per batch. Stop and ask if a batch would change more than about 300 lines.
+- Never edit test files in the same run as the code they test. They are the safety net, and a net that changes with the code proves nothing. Clean tests only when the path given is a test file or folder.
 - Never edit: generated files, vendored or third-party code, lock files, migrations, snapshots, anything matched by `.gitignore`.
 
 ## 3. Record a baseline
@@ -53,7 +54,8 @@ Steps 2 to 7 are fix mode.
 Find the project's own checks (test command, linter, type-checker, compiler warnings) from its config files and docs. Run them and record the result before changing anything.
 
 - Checks already failing: note which. A change may not add new failures.
-- No tests cover the code in scope: switch to `report`. Say why, and offer to write tests that pin current behaviour first.
+- Some code in scope has no test: before changing it, record its outputs for a spread of inputs (normal, edge and invalid) with a throwaway script kept outside the project. Compare after the change, then delete the script. List that code under "Not verified" as checked by comparison only.
+- Code that cannot be exercised that way (it needs a network, a database or a device): `report` only for that code. Say why, and offer to write tests that pin current behaviour first.
 
 ## 4. Find
 
@@ -71,7 +73,9 @@ Then run the language checks: read [references/languages.md](references/language
 | `medium`, `hard` | Show the candidate list first. Apply after the user approves. |
 | `report` | Never apply. |
 
-Make one kind of change at a time, smallest first. Match the project's existing style and naming.
+Make one kind of change at a time, smallest first, so a reviewer can accept one kind and reject another. Match the project's existing style and naming.
+
+A cleanup a human cannot review is not finished. If the result is too large to read in one sitting, split it and say how.
 
 ## 6. Verify
 
@@ -85,7 +89,7 @@ After each group of changes, rerun the baseline checks.
 End with only this:
 
 ```
-anti-slopware <level>: <files changed> files, <lines before> -> <lines after> lines
+anti-slopware <level>: <files changed> files, <lines before> -> <lines after> lines (changed files only)
 
 Removed duplication: <n>
   - <file>:<lines> <what, in a few words>

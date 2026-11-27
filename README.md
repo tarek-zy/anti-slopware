@@ -7,9 +7,9 @@
 
 <br>
 
-**A plugin that helps your coding agent produce higher-quality code,<br>and proves nothing changed using your own tests.**
+**A plugin that helps your coding agent produce higher-quality code<br>and changes that humans can review, then proves nothing broke.**
 
-[What it improves](#what-it-improves) · [Two modes](#two-modes) · [Install](#install) · [Use](#use) · [Levels](#levels) · [Proof](#proof) · [Roadmap](ROADMAP.md)
+[What it improves](#what-it-improves) · [Two modes](#two-modes) · [Built for review](#built-for-human-review) · [Install](#install) · [Use](#use) · [Levels](#levels) · [Proof](#proof) · [Roadmap](ROADMAP.md)
 
 [![verify](https://github.com/tarek-zy/anti-slopware/actions/workflows/verify.yml/badge.svg)](https://github.com/tarek-zy/anti-slopware/actions/workflows/verify.yml)
 [![license](https://img.shields.io/github/license/tarek-zy/anti-slopware?style=flat-square&color=1a7f37)](LICENSE)
@@ -42,6 +42,19 @@ This is not a minifier. Fewer lines is a side effect, not the goal. When a named
 | **Fix** | On code that already exists | Finds and removes slop, from your current change up to the whole project, in batches small enough to review. |
 
 Use one or both. Guard keeps new code clean. Fix deals with what is already there.
+
+## Built for human review
+
+AI can write code faster than people can read it. When reviews turn into skimming, quality slips without anyone deciding it should. Every part of this plugin is meant to keep a human able to follow what changed.
+
+- **Small scope.** By default it touches only your current change, not the whole repo.
+- **One kind of change at a time.** Duplicate removal, dead code and renames arrive separately, so you can accept one and reject another.
+- **Renames and moves on their own.** They never hide inside other edits.
+- **A short report.** What changed and why, what was skipped, which checks ran, and what nothing verified.
+- **Batches you can read.** A whole-project cleanup goes folder by folder and stops to ask when a batch gets large.
+- **Tests left alone.** It does not edit tests in the same run as the code they protect.
+
+A skill for writing short, clear pull request descriptions (`slim-pr`) is next on the [roadmap](ROADMAP.md).
 
 ## Before and after
 
@@ -139,7 +152,8 @@ Full definitions: [levels.md](skills/anti-slopware/references/levels.md).
 - Edit generated, vendored or ignored files, or anything outside the scope you gave.
 - Make code shorter at the cost of clarity.
 - Rename or reorganise to suit its own taste. Your project's style wins.
-- Work without a safety net. With no tests covering the code, it reports and stops.
+- Work without a safety net. Code with no tests is compared before and after, and listed as not verified by tests. Code it cannot exercise is reported, not changed.
+- Edit your tests while it edits the code they protect.
 - Say your code is bug-free. It says what was checked and what was not.
 
 ## Proof
