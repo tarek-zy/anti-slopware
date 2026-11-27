@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" width="1200" height="260" role="img" aria-label="Two modes: Guard prevents slop while code is written; Fix cleans code that already exists">
+<style>
+.card{fill:#f6f8fa;stroke:#d1d9e0}.fg{fill:#1f2328}.mu{fill:#59636e}.ln{stroke:#d1d9e0}.chip{fill:#ffffff;stroke:#d1d9e0}
+@media (prefers-color-scheme: dark){.card{fill:#161b22;stroke:#30363d}.fg{fill:#e6edf3}.mu{fill:#8b949e}.ln{stroke:#30363d}.chip{fill:#0d1117;stroke:#30363d}}
+</style>
+<rect x="1" y="1" width="586" height="258" rx="14" class="card" stroke-width="1.5"/>
+<rect x="28" y="28" width="56" height="56" rx="14" fill="#388bfd" opacity="0.14"/>
+<g transform="translate(40,40) scale(1.3333333333333333)" fill="none" stroke="#388bfd" stroke-width="1.72" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></g>
+<text x="104" y="54" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="30" font-weight="700" text-anchor="start">Guard</text>
+<text x="105" y="78" class="mu" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" font-weight="600" text-anchor="start">WHILE THE AGENT WRITES CODE</text>
+<text x="28" y="124" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Stops slop before it is written.</text>
+<text x="28" y="151" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Reuses what exists, writes only what</text>
+<text x="28" y="178" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">the task needs, checks its own diff.</text>
+<rect x="28" y="204" width="300" height="36" rx="8" class="chip"/>
+<text x="178" y="228" text-anchor="middle" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="16"><tspan fill="#388bfd">$</tspan> /anti-slopware guard</text>
+<rect x="613" y="1" width="586" height="258" rx="14" class="card" stroke-width="1.5"/>
+<rect x="640" y="28" width="56" height="56" rx="14" fill="#2da44e" opacity="0.14"/>
+<g transform="translate(652,40) scale(1.3333333333333333)" fill="none" stroke="#2da44e" stroke-width="1.72" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></g>
+<text x="716" y="54" class="fg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="30" font-weight="700" text-anchor="start">Fix</text>
+<text x="717" y="78" class="mu" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" font-weight="600" text-anchor="start">ON CODE THAT ALREADY EXISTS</text>
+<text x="640" y="124" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">Finds and removes slop, from your</text>
+<text x="640" y="151" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">current change up to the whole</text>
+<text x="640" y="178" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" text-anchor="start">project, in reviewable batches.</text>
+<rect x="640" y="204" width="300" height="36" rx="8" class="chip"/>
+<text x="790" y="228" text-anchor="middle" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="16"><tspan fill="#2da44e">$</tspan> /anti-slopware</text>
+</svg>

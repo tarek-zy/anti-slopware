@@ -9,7 +9,7 @@
 
 **A plugin that helps your coding agent produce higher-quality code<br>and pull requests humans can review, then proves nothing broke.**
 
-[What it improves](#what-it-improves) · [Two modes](#two-modes) · [Built for review](#built-for-human-review) · [Install](#install) · [Use](#use) · [Levels](#levels) · [Proof](#proof) · [Roadmap](ROADMAP.md)
+[Skills](#what-is-inside) · [Two modes](#two-modes) · [How it works](#how-it-works) · [Install](#install) · [Use](#use) · [Levels](#levels) · [Proof](#proof) · [Roadmap](ROADMAP.md)
 
 [![verify](https://github.com/tarek-zy/anti-slopware/actions/workflows/verify.yml/badge.svg)](https://github.com/tarek-zy/anti-slopware/actions/workflows/verify.yml)
 [![license](https://img.shields.io/github/license/tarek-zy/anti-slopware?style=flat-square&color=1a7f37)](LICENSE)
@@ -24,6 +24,10 @@ AI agents write code fast, and a lot of it is filler: the same function twice, i
 
 anti-slopware improves the quality of that code. It removes the filler, then makes what is left clearer and better organised. It runs your tests before and after, and reverts any change that breaks them.
 
+## What is inside
+
+<p align="center"><img src="assets/skills.svg" alt="The six skills: anti-slopware, slim-pr, test-slop, dep-check, error-slop and junk-sweep" width="100%"></p>
+
 ## What it improves
 
 | Goal | What changes |
@@ -36,12 +40,15 @@ This is not a minifier. Fewer lines is a side effect, not the goal. When a named
 
 ## Two modes
 
-| Mode | When | What it does |
-|---|---|---|
-| **Guard** | While the agent writes code | Stops slop before it is written. The agent reuses what exists, writes only what the task needs, and checks its own diff before saying it is done. Stays on for the whole session. |
-| **Fix** | On code that already exists | Finds and removes slop, from your current change up to the whole project, in batches small enough to review. |
+<p align="center"><img src="assets/modes.svg" alt="Guard mode prevents slop while code is written. Fix mode cleans code that already exists." width="100%"></p>
 
 Use one or both. Guard keeps new code clean. Fix deals with what is already there.
+
+## How it works
+
+<p align="center"><img src="assets/pipeline.svg" alt="Fix mode in five steps: baseline, find, apply, verify, report" width="100%"></p>
+
+Nothing is changed before your tests and linters have run once, and nothing stays changed if they fail afterwards.
 
 ## Built for human review
 
@@ -123,6 +130,11 @@ Run it as `/anti-slopware`.
 
 ## Use
 
+<p align="center"><img src="assets/usage.svg" alt="Command cheat sheet" width="100%"></p>
+
+<details>
+<summary>All commands as text, to copy</summary>
+
 | Command | What it does |
 |---|---|
 | `/anti-slopware` | Fix the current changes at `medium` |
@@ -138,9 +150,13 @@ Run it as `/anti-slopware`.
 | `/anti-slopware guard` | Turn guard mode on for this session |
 | `/anti-slopware guard hard` | Guard mode with the strictest rules |
 
+</details>
+
 Or ask in plain words: "clean up this branch", "remove the dead code in `utils/`".
 
 ## Levels
+
+<p align="center"><img src="assets/levels.svg" alt="Three levels: easy, medium and hard. Each includes the one before it." width="100%"></p>
 
 | Level | Fixes | Applies |
 |---|---|---|

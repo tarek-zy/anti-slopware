@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 410" width="1200" height="410" role="img" aria-label="Command cheat sheet: fix existing code, guard new code, and the other skills">
+<style>
+.card{fill:#f6f8fa;stroke:#d1d9e0}.fg{fill:#1f2328}.mu{fill:#59636e}.ln{stroke:#d1d9e0}.chip{fill:#ffffff;stroke:#d1d9e0}
+@media (prefers-color-scheme: dark){.card{fill:#161b22;stroke:#30363d}.fg{fill:#e6edf3}.mu{fill:#8b949e}.ln{stroke:#30363d}.chip{fill:#0d1117;stroke:#30363d}}
+</style>
+<rect x="1" y="1" width="1198" height="408" rx="14" class="card" stroke-width="1.5"/>
+<path d="M1 44h1198" class="ln" stroke-width="1.5"/>
+<circle cx="26" cy="23" r="6" fill="#e5534b"/><circle cx="48" cy="23" r="6" fill="#db6d28"/><circle cx="70" cy="23" r="6" fill="#2da44e"/>
+<text x="600" y="28" class="mu" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="14" font-weight="400" text-anchor="middle">anti-slopware</text>
+<rect x="36" y="69" width="4" height="18" rx="2" fill="#2da44e"/>
+<text x="50" y="84" class="mu" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" font-weight="700" text-anchor="start">FIX  existing code</text>
+<text x="36" y="118" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#2da44e">$</tspan> /anti-slopware</text>
+<text x="322" y="118" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">your current changes, medium level</text>
+<text x="36" y="148" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#2da44e">$</tspan> /anti-slopware easy</text>
+<text x="322" y="148" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">duplication only</text>
+<text x="36" y="178" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#2da44e">$</tspan> /anti-slopware hard src/</text>
+<text x="322" y="178" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">everything, in one folder</text>
+<text x="36" y="208" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#2da44e">$</tspan> /anti-slopware all</text>
+<text x="322" y="208" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">the whole project, in batches</text>
+<text x="36" y="238" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#2da44e">$</tspan> /anti-slopware report</text>
+<text x="322" y="238" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">list findings, change nothing</text>
+<rect x="36" y="275" width="4" height="18" rx="2" fill="#388bfd"/>
+<text x="50" y="290" class="mu" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" font-weight="700" text-anchor="start">GUARD  new code</text>
+<text x="36" y="324" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#388bfd">$</tspan> /anti-slopware guard</text>
+<text x="322" y="324" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">on for this session</text>
+<text x="36" y="354" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#388bfd">$</tspan> /anti-slopware guard hard</text>
+<text x="322" y="354" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">with the strictest rules</text>
+<rect x="630" y="69" width="4" height="18" rx="2" fill="#a371f7"/>
+<text x="644" y="84" class="mu" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" font-weight="700" text-anchor="start">MORE SKILLS</text>
+<text x="630" y="118" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#a371f7">$</tspan> /anti-slopware pr</text>
+<text x="916" y="118" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">write the pull request description</text>
+<text x="630" y="148" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#a371f7">$</tspan> /anti-slopware tests</text>
+<text x="916" y="148" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">find tests that prove nothing</text>
+<text x="630" y="178" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#a371f7">$</tspan> /anti-slopware deps</text>
+<text x="916" y="178" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">unused and invented packages</text>
+<text x="630" y="208" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#a371f7">$</tspan> /anti-slopware errors</text>
+<text x="916" y="208" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">error handling that hides failures</text>
+<text x="630" y="238" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#a371f7">$</tspan> /anti-slopware junk</text>
+<text x="916" y="238" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15" font-weight="400" text-anchor="start">leftover files and build caches</text>
+<rect x="630" y="275" width="4" height="18" rx="2" fill="#db6d28"/>
+<text x="644" y="290" class="mu" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" font-weight="700" text-anchor="start">OR JUST ASK</text>
+<text x="630" y="324" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#db6d28">$</tspan> "clean up this branch"</text>
+<text x="630" y="354" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="15.5"><tspan fill="#db6d28">$</tspan> "are these tests any good?"</text>
+</svg>

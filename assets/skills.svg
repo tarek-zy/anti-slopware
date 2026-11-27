@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 404" width="1200" height="404" role="img" aria-label="The six skills: anti-slopware, slim-pr, test-slop, dep-check, error-slop, junk-sweep">
+<style>
+.card{fill:#f6f8fa;stroke:#d1d9e0}.fg{fill:#1f2328}.mu{fill:#59636e}.ln{stroke:#d1d9e0}.chip{fill:#ffffff;stroke:#d1d9e0}
+@media (prefers-color-scheme: dark){.card{fill:#161b22;stroke:#30363d}.fg{fill:#e6edf3}.mu{fill:#8b949e}.ln{stroke:#30363d}.chip{fill:#0d1117;stroke:#30363d}}
+</style>
+<rect x="1" y="1" width="382" height="188" rx="14" class="card" stroke-width="1.5"/>
+<rect x="1" y="22" width="5" height="44" rx="2.5" fill="#2da44e"/>
+<rect x="28" y="24" width="48" height="48" rx="12" fill="#2da44e" opacity="0.14"/>
+<g transform="translate(38,34) scale(1.1666666666666667)" fill="none" stroke="#2da44e" stroke-width="1.97" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/></g>
+<text x="92" y="56" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="23" font-weight="700" text-anchor="start">anti-slopware</text>
+<text x="28" y="106" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Removes duplicated, dead and</text>
+<text x="28" y="131" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">verbose code. Clearer names,</text>
+<text x="28" y="156" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">better organisation.</text>
+<rect x="409" y="1" width="382" height="188" rx="14" class="card" stroke-width="1.5"/>
+<rect x="409" y="22" width="5" height="44" rx="2.5" fill="#388bfd"/>
+<rect x="436" y="24" width="48" height="48" rx="12" fill="#388bfd" opacity="0.14"/>
+<g transform="translate(446,34) scale(1.1666666666666667)" fill="none" stroke="#388bfd" stroke-width="1.97" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 13h6"/><path d="M10 17h4"/></g>
+<text x="500" y="56" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="23" font-weight="700" text-anchor="start">slim-pr</text>
+<text x="436" y="106" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Pull request descriptions a</text>
+<text x="436" y="131" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">reviewer reads in a minute.</text>
+<text x="436" y="156" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">No unsupported claims.</text>
+<rect x="817" y="1" width="382" height="188" rx="14" class="card" stroke-width="1.5"/>
+<rect x="817" y="22" width="5" height="44" rx="2.5" fill="#a371f7"/>
+<rect x="844" y="24" width="48" height="48" rx="12" fill="#a371f7" opacity="0.14"/>
+<g transform="translate(854,34) scale(1.1666666666666667)" fill="none" stroke="#a371f7" stroke-width="1.97" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z"/><path d="M8 12l3 3 5-6"/></g>
+<text x="908" y="56" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="23" font-weight="700" text-anchor="start">test-slop</text>
+<text x="844" y="106" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Finds tests that prove nothing,</text>
+<text x="844" y="131" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">and proves it by breaking</text>
+<text x="844" y="156" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">the code.</text>
+<rect x="1" y="215" width="382" height="188" rx="14" class="card" stroke-width="1.5"/>
+<rect x="1" y="236" width="5" height="44" rx="2.5" fill="#db6d28"/>
+<rect x="28" y="238" width="48" height="48" rx="12" fill="#db6d28" opacity="0.14"/>
+<g transform="translate(38,248) scale(1.1666666666666667)" fill="none" stroke="#db6d28" stroke-width="1.97" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/></g>
+<text x="92" y="270" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="23" font-weight="700" text-anchor="start">dep-check</text>
+<text x="28" y="320" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Unused and undeclared</text>
+<text x="28" y="345" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">dependencies, and package</text>
+<text x="28" y="370" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">names an AI made up.</text>
+<rect x="409" y="215" width="382" height="188" rx="14" class="card" stroke-width="1.5"/>
+<rect x="409" y="236" width="5" height="44" rx="2.5" fill="#e5534b"/>
+<rect x="436" y="238" width="48" height="48" rx="12" fill="#e5534b" opacity="0.14"/>
+<g transform="translate(446,248) scale(1.1666666666666667)" fill="none" stroke="#e5534b" stroke-width="1.97" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20z"/><path d="M12 10v5"/><path d="M12 17.4v.6"/></g>
+<text x="500" y="270" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="23" font-weight="700" text-anchor="start">error-slop</text>
+<text x="436" y="320" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Error handling that hides</text>
+<text x="436" y="345" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">failures. Leaves deliberate</text>
+<text x="436" y="370" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">handling alone.</text>
+<rect x="817" y="215" width="382" height="188" rx="14" class="card" stroke-width="1.5"/>
+<rect x="817" y="236" width="5" height="44" rx="2.5" fill="#1b9e9e"/>
+<rect x="844" y="238" width="48" height="48" rx="12" fill="#1b9e9e" opacity="0.14"/>
+<g transform="translate(854,248) scale(1.1666666666666667)" fill="none" stroke="#1b9e9e" stroke-width="1.97" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6"/><path d="M14 11v6"/></g>
+<text x="908" y="270" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="23" font-weight="700" text-anchor="start">junk-sweep</text>
+<text x="844" y="320" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">Leftover screenshots, scratch</text>
+<text x="844" y="345" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">files and build caches. Asks</text>
+<text x="844" y="370" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="17" font-weight="400" text-anchor="start">before deleting.</text>
+</svg>
