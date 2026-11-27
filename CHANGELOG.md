@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.0
+
+- `dep-check` skill: finds unused and undeclared dependencies and names that may not exist. Adds a package only when a lock file, the installed environment or the registry proves it exists. Edits manifests only.
+
 ## 0.6.0
 
 - `test-slop` skill: finds tests that prove nothing and proves each case by breaking the code. Reports by default; `fix` strengthens or removes them. Never edits the code under test.

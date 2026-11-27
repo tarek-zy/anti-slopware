@@ -131,6 +131,7 @@ Run it as `/anti-slopware`.
 | `/anti-slopware all` | Fix the whole project, one folder at a time |
 | `/anti-slopware report` | List findings, change nothing |
 | `/anti-slopware pr` or `/slim-pr` | Write or trim the pull request description |
+| `/anti-slopware deps` or `/dep-check` | Report unused, missing and unverifiable dependencies; add `fix` to edit the manifest |
 | `/anti-slopware tests` or `/test-slop` | Report tests that prove nothing; add `fix` to strengthen or remove them |
 | `/anti-slopware guard` | Turn guard mode on for this session |
 | `/anti-slopware guard hard` | Guard mode with the strictest rules |
@@ -209,7 +210,7 @@ It reports which tools ran and which were missing, and it never claims your code
 | `anti-slopware` | Duplicated, useless, verbose, unclear and disorganised code | Shipped |
 | `slim-pr` | PR descriptions a reviewer can read in a minute; flags noise in the diff and claims the diff does not support | Shipped |
 | `test-slop` | Finds tests that prove nothing, and proves it by breaking the code and showing the test still passes | Shipped |
-| `dep-check` | Unused and non-existent dependencies | Planned |
+| `dep-check` | Unused and undeclared dependencies, and AI-invented package names. Never adds a package without evidence it exists | Shipped |
 | `error-slop` | Swallowed and hidden errors | Planned |
 | `junk-sweep` | Leftover screenshots, temp files, build caches | Planned |
 

@@ -1,7 +1,7 @@
 {
   "name": "anti-slopware",
   "displayName": "anti-slopware",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Clean up AI-written code without breaking it. anti-slopware is a plugin that helps your coding agent produce higher-quality code and changes that humans can review. It removes duplication and dead code, simplifies logic and fixes unclear names, keeps every change small and explained, and proves nothing changed using your own tests.",
   "author": {
     "name": "tarek-zy",
