@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.10.1
+
+From a harder guard mode test (a vague request in a messier project):
+
+- Guard mode now says to leave existing shared code alone and report weaknesses as findings.
+- It says how to read vague words such as "robust" without adding machinery.
+- It cleans up caches and scratch files its own checks create.
+
 ## 0.10.0
 
 - `review-map` skill: a reading guide for the human reviewing a change. Orders the files, gives each careful file one question, marks what can be skimmed and what does not belong. 250 words at most, no verdict.
