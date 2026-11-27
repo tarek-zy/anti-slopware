@@ -8,7 +8,7 @@
 <path d="M18 28l4.5 4.5 8-9" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="10" y="80" class="fg" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="24" font-weight="700" text-anchor="start">v1</text>
 <text x="10" y="104" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="13" font-weight="700" fill="#2da44e">SHIPPED</text>
-<text x="10" y="136" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" text-anchor="start">Eight skills</text>
+<text x="10" y="136" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" text-anchor="start">Nine skills</text>
 <text x="10" y="159" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" text-anchor="start">Ten languages</text>
 <text x="10" y="182" class="mu" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="15.5" font-weight="400" text-anchor="start">Guard and fix modes</text>
 <circle cx="324" cy="28" r="13" fill="#388bfd" opacity="0.35"/>

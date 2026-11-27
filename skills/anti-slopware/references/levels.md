@@ -89,7 +89,7 @@ A reader new to the code must understand the new version faster than the old one
 - Renaming anything public, or anything referenced by a string, config, serialisation or reflection.
 - Renaming an accurate name to one you like better.
 - Splitting a function that already reads well top to bottom. Length alone is not a reason.
-- Moving code between files. Propose it; do not do it as part of a cleanup.
+- Moving code between files. That is the `organize` skill's job, done as its own step. Suggest it; do not do it as part of a cleanup.
 - Reformatting. That is the formatter's job.
 
 **Keep the diff reviewable**
