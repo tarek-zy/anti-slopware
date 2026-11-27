@@ -9,7 +9,7 @@ Shipped one skill at a time, each with examples and tests.
 - [x] `slim-pr`: PR descriptions as what / why / how to test / risks; flags noise in the diff
 - [x] `test-slop`: assertions that cannot fail, over-mocking, copy-pasted cases
 - [x] `dep-check`: unused dependencies, imports of packages that do not exist
-- [ ] `error-slop`: swallowed exceptions, catch-everything blocks
+- [x] `error-slop`: swallowed exceptions, catch-everything blocks
 - [ ] `junk-sweep`: leftover screenshots, temp files and regenerable build caches; lists first, deletes after approval
 
 ## v1.1

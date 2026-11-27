@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.0
+
+- `error-slop` skill: finds handlers that hide failures and separates them from deliberate handling such as bounded retries, boundary handlers and documented fallbacks. Reports by default; `fix` applies the smallest change.
+
 ## 0.7.0
 
 - `dep-check` skill: finds unused and undeclared dependencies and names that may not exist. Adds a package only when a lock file, the installed environment or the registry proves it exists. Edits manifests only.
