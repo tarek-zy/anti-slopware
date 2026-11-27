@@ -7,7 +7,7 @@
 
 <br>
 
-**A plugin that helps your coding agent produce higher-quality code<br>and changes that humans can review, then proves nothing broke.**
+**A plugin that helps your coding agent produce higher-quality code<br>and pull requests humans can review, then proves nothing broke.**
 
 [What it improves](#what-it-improves) · [Two modes](#two-modes) · [Built for review](#built-for-human-review) · [Install](#install) · [Use](#use) · [Levels](#levels) · [Proof](#proof) · [Roadmap](ROADMAP.md)
 
