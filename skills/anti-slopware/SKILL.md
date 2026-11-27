@@ -1,0 +1,102 @@
+---
+name: anti-slopware
+description: Finds and removes duplicated code, useless code and over-verbose code without changing behaviour. Three levels - easy (duplication only), medium (plus dead and useless code), hard (plus simplifying verbose code). Use when the user asks to clean up, deslop, dedupe, simplify or tidy code, to remove dead code or AI slop, or types /anti-slopware. Also use while writing new code when the user asks for write mode or slop-free code.
+license: MIT
+metadata:
+  version: "0.1.0"
+---
+
+# anti-slopware
+
+Make code smaller and clearer without changing what it does. Every change must be provably safe or it is not made.
+
+## 1. Read the request
+
+Arguments, in any order, all optional:
+
+| Argument | Meaning | Default |
+|---|---|---|
+| `easy`, `medium`, `hard` | Level (see below) | `medium` |
+| `write` | Write mode: apply the rules to code you are about to write | off (refine mode) |
+| `report` | Find and list, change nothing | off |
+| a path | File or folder to work on | current uncommitted and branch changes |
+
+Levels are cumulative:
+
+- **easy**: duplicated code only.
+- **medium**: easy + useless code.
+- **hard**: medium + over-verbose code.
+
+Exact definitions, with what counts and what does not, are in [references/levels.md](references/levels.md). Read it before finding anything.
+
+If `write` is given, follow [references/write-mode.md](references/write-mode.md) and skip steps 2 to 7.
+
+## 2. Set the scope
+
+- No path given: the files changed on this branch (`git diff` against the base branch, plus uncommitted changes). Only touch lines in, or directly entangled with, those changes.
+- Path given: that file or folder.
+- Never edit: generated files, vendored or third-party code, lock files, migrations, snapshots, anything matched by `.gitignore`.
+
+## 3. Record a baseline
+
+Find the project's own checks (test command, linter, type-checker, compiler warnings) from its config files and docs. Run them and record the result before changing anything.
+
+- Checks already failing: note which. A change may not add new failures.
+- No tests cover the code in scope: switch to `report`. Say why, and offer to write tests that pin current behaviour first.
+
+## 4. Find
+
+Read the code in scope and every caller of anything you might change. List candidates by category from `references/levels.md`, each with file, lines and a one-line reason.
+
+Before listing something as unused, search the whole repository for it, including strings, config, templates and build files. Code reached by reflection, registration, plugin entry points, serialisation or public export is not unused.
+
+For C files in scope, also run [references/lang-c.md](references/lang-c.md).
+
+## 5. Apply
+
+| Level | Behaviour |
+|---|---|
+| `easy` | Apply directly. |
+| `medium`, `hard` | Show the candidate list first. Apply after the user approves. |
+| `report` | Never apply. |
+
+Make one kind of change at a time, smallest first. Match the project's existing style and naming.
+
+## 6. Verify
+
+After each group of changes, rerun the baseline checks.
+
+- Anything newly failing: revert that change, keep the rest, and list it under "Skipped".
+- Never edit a test's assertions to make it pass.
+
+## 7. Report
+
+End with only this:
+
+```
+anti-slopware <level>: <files changed> files, <lines before> -> <lines after> lines
+
+Removed duplication: <n>
+  - <file>:<lines> <what, in a few words>
+Removed useless code: <n>
+Simplified: <n>
+Skipped: <n>
+  - <file>:<lines> <why>
+Checks: <command> <result before> -> <result after>
+Not verified: <anything no check covered>
+```
+
+Leave out sections with nothing in them.
+
+## Hard limits
+
+Never, at any level:
+
+- Change behaviour: outputs, side effects, error types and messages, ordering, numeric results, performance class.
+- Change or remove a public API: exported names, signatures, CLI flags, config keys, wire formats.
+- Rewrite working code to suit your taste. The project's style wins.
+- Trade clarity for fewer lines: no nested ternaries, no dense one-liners, no clever tricks.
+- Touch code outside the scope, even if it is worse.
+- Claim the code is correct, bug-free or memory safe. Say what was checked and what was not.
+
+A real bug found along the way is a finding, not a cleanup. Report it separately and fix it only if the user asks, because fixing it changes behaviour.

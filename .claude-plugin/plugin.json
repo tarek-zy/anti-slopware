@@ -1,0 +1,14 @@
+{
+  "name": "anti-slopware",
+  "displayName": "anti-slopware",
+  "version": "0.1.0",
+  "description": "Removes duplicated, useless and over-verbose code without changing behaviour, and keeps changes easy for humans to review.",
+  "author": {
+    "name": "tarek-zy",
+    "url": "https://github.com/tarek-zy"
+  },
+  "homepage": "https://github.com/tarek-zy/anti-slopware",
+  "repository": "https://github.com/tarek-zy/anti-slopware",
+  "license": "MIT",
+  "keywords": ["code-quality", "refactoring", "dead-code", "duplication", "code-review", "ai-slop"]
+}

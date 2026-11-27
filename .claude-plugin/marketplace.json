@@ -1,0 +1,14 @@
+{
+  "name": "tarek-zy",
+  "description": "Plugins by tarek-zy",
+  "owner": {
+    "name": "tarek-zy"
+  },
+  "plugins": [
+    {
+      "name": "anti-slopware",
+      "source": "./",
+      "description": "Removes duplicated, useless and over-verbose code without changing behaviour."
+    }
+  ]
+}
