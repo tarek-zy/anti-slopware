@@ -1,5 +1,9 @@
 # Contributing
 
+Issues and pull requests are welcome. Pick an issue template when you open one, and comment on an issue before starting large work so nobody duplicates it.
+
+Items in [ROADMAP.md](ROADMAP.md) are open for anyone to take.
+
 ## Good first contributions
 
 - A language check: add `skills/anti-slopware/references/lang-<name>.md`, following `lang-c.md`.
@@ -24,4 +28,6 @@ scripts/check-sensitive.sh
 
 ## Pull requests
 
-Say what changed, why, and how you tested it. Keep one change per PR.
+Fork the repo, make your change on a branch, and open a pull request. Say what changed, why, and how you tested it. Keep one change per PR.
+
+By contributing you agree that your work is released under the [MIT license](LICENSE) and that you follow the [code of conduct](CODE_OF_CONDUCT.md).
