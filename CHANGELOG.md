@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.13.2
+
+- `junk-sweep` asks the user about every item it was unsure of, one clear question each, with keep as the default. It deletes one only on a clear yes for that item. In an unattended run it deletes none of them and puts the questions in the report.
+
 ## 0.13.1
 
 - `junk-sweep` now tells logs and copies apart by evidence, not by name. Throwaway logs (debug output, package-manager dumps, captured test runs, empty files) are candidates. Application, audit, transaction, deploy, crash and rotated logs never are, and are listed as kept with a flag on any that contain errors.

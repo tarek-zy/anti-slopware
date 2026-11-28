@@ -3,7 +3,7 @@ name: junk-sweep
 description: Finds files a coding session left behind and caches that only waste disk space - review screenshots, scratch scripts, throwaway logs, build output - shows them with sizes, and removes them only after approval. Tells a useless cache from a backup, and a throwaway debug log from a log that matters. Never touches backups, application or audit logs, tracked files, referenced files, secrets or user data. Use when the user asks to clean up a workspace or project folder, free disk space, remove leftover screenshots, temporary files or build caches, or types /junk-sweep or /anti-slopware junk.
 license: MIT
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # junk-sweep
@@ -58,7 +58,7 @@ A log can be noise from a test run or the only record of what happened in produc
 
 List the logs that matter under "Logs kept", with a one-line reason and a flag on any that contain errors. If one is very large, suggest rotation or compression. Do not do it.
 
-Unsure which kind it is: "Not sure", and leave it.
+Unsure which kind it is: "Not sure". The user is asked in step 4b.
 
 ## Copies and backups
 
@@ -76,7 +76,7 @@ List what you kept under "Backups kept". If backups take a lot of space, say so 
 3. **Not a secret or local setting.** `.env*`, keys, certificates, credentials, tokens. Never delete them and never print their contents.
 4. **Not user data.** Databases (`*.db`, `*.sqlite`), uploads, downloads, documents, notes, exports the user asked for.
 5. **Not editor or tool settings.** `.vscode/`, `.idea/`, lock files.
-6. **You can say what it is.** If you cannot classify a file with confidence, list it under "Not sure" and leave it.
+6. **You can say what it is.** If you cannot classify a file with confidence, list it under "Not sure". The user is asked about it in step 4b.
 
 Dependency folders (`node_modules/`, virtual environments, `Pods/`) are regenerable but slow to rebuild. List them separately with their size. Remove one only if the user names it.
 
@@ -99,18 +99,30 @@ Backups kept:
   - <path> <size> <what it appears to back up>
 Tracked, looks like junk (left alone):
   - <path>: remove with `git rm` if you agree
-Not sure (left alone):
-  - <path>: <what made it unclear>
+Not sure (you will be asked):
+  - <path> <size>: <what it seems to be, and what made it unclear>
 ```
 
 Session leftovers are untracked, so most cannot be recovered once deleted. Say so on each line, so the approval is an informed one. Hand-written files such as scratch scripts deserve the most care.
 
 With `report`, stop here.
 
+## 4b. Ask about what you were not sure of
+
+The user knows things you cannot see. After the list, ask about each item you left out because you were unsure. Never decide these yourself.
+
+- Ask one clear question per item, or per group of items of the same kind: name the path, its size, what you think it is and why you were unsure. "Delete `build/out/app.bin` (810 KB)? It sits in the build folder, but the build command in this project does not produce a file like it."
+- The answer to every question defaults to **keep**. Delete an item only on a clear yes that covers that item. No answer, an unclear answer or "not sure" means keep.
+- Use the question tool if one is available, so the user can answer with a click. Otherwise ask in plain text and wait.
+- If the user cannot be asked (an unattended run), delete nothing from this group. Put the questions in the report so they can answer later.
+
+Also offer, in one line each and without pressing: the dependency folders, and the backups and kept logs if they take a lot of space. These are the user's to remove. Never offer secrets, user data, tracked files or referenced files.
+
 ## 5. Clean (only with `clean`, after the list is approved)
 
 - Prefer the project's own clean command for regenerable output: `flutter clean`, `cargo clean`, `gradle clean`, `dotnet clean`, `make clean`, `npm run clean`.
 - Otherwise delete exactly the paths on the approved list, one by one. No wildcards, and no deleting a folder that is not itself on the list.
+- Then delete the "Not sure" items the user said yes to in step 4b, and only those.
 - If deleting is not permitted, move the items into a `_to_delete/` folder in the project and tell the user to remove it.
 - Do not edit `.gitignore`, do not run git commands that change the repository, and do not touch anything not on the list.
 
@@ -120,6 +132,10 @@ Confirm each listed path is gone, that `git status` shows no tracked file change
 
 ```
 Removed: <n> items, <size freed>
+Removed because you said yes: <path>
+Kept because you said no or did not answer: <path>
+Still waiting for your answer:
+  - <the question, repeated in full>
 Could not remove: <path>: <why>
 Checks: <command> <result>
 To stop these coming back: <.gitignore lines to consider>
