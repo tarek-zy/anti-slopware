@@ -1,9 +1,14 @@
 # Changelog
 
-## 0.16.0
+## 0.18.0
 
 - Ruby language check: nil and truthiness, rescues that are too wide, shared defaults, bang methods that return `nil`, precedence of `and` and `or`, string and symbol keys, unsafe input handling, and a short Rails list. It lists what is not slop in Ruby, such as methods reached by name and `self.` on a setter.
 - Tested by a fresh agent on a Ruby project with planted bugs and traps. It passed with no change to the draft.
+
+## 0.17.0
+
+- SQL language check: NULL logic, join fan-out, outer joins turned inner, `UPDATE` and `DELETE` with no `WHERE`, ungrouped columns, `AND` and `OR` precedence, limits with no order, type and date comparisons, transactions and migrations. It lists what is not slop in SQL, starting with applied migrations, and says to run statements only against a scratch database.
+- Tested by a fresh agent on a SQLite project with planted bugs and traps. It passed with no change to the draft.
 
 ## 0.15.0
 

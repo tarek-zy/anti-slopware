@@ -6,7 +6,7 @@ Items in [ROADMAP.md](ROADMAP.md) are open for anyone to take.
 
 ## Good first contributions
 
-- A language check: add `skills/anti-slopware/references/lang-<name>.md`, following an existing one such as `lang-go.md`, and add it to the table in `languages.md`. Wanted: Kotlin, Swift, SQL.
+- A language check: add `skills/anti-slopware/references/lang-<name>.md`, following an existing one such as `lang-go.md`, and add it to the table in `languages.md`. Wanted: Kotlin, Swift.
 - A case the skill gets wrong: open an issue with the code before, what it did, and what it should have done.
 - A new example under `examples/` with tests.
 
