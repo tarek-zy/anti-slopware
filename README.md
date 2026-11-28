@@ -7,7 +7,7 @@
 
 <br>
 
-**A plugin that quietly raises the quality of the code your AI agent writes:<br>cleaner, better organised and documented, so people can understand, review and maintain it.**
+**A plugin that quietly raises the quality of the code your AI agent writes:<br>cleaner, better organised and documented, so the project stays easy to maintain and to improve.**
 
 [Skills](#what-is-inside) · [Two modes](#two-modes) · [How it works](#how-it-works) · [Install](#install) · [Use](#use) · [Levels](#levels) · [Proof](#proof) · [Roadmap](#roadmap)
 
@@ -20,9 +20,9 @@
 
 ---
 
-AI agents write code fast, and a lot of it is filler: the same function twice, imports nobody uses, comments that repeat the line below them, five levels of nesting where one would do. A human still has to review all of it.
+AI agents write code fast, and a lot of it is filler: the same function twice, imports nobody uses, comments that repeat the line below them, five levels of nesting where one would do. Every later change, by a person or by an agent, has to work around it.
 
-anti-slopware improves the quality of that code. It removes the filler, then makes what is left clearer and better organised. It runs your tests before and after, and reverts any change that breaks them.
+anti-slopware improves the quality of that code, so the next fix or feature is easier to make. It removes the filler, then makes what is left clearer and better organised. It runs your tests before and after, and reverts any change that breaks them.
 
 ## What is inside
 
@@ -32,8 +32,8 @@ anti-slopware improves the quality of that code. It removes the filler, then mak
 
 | Goal | What changes |
 |---|---|
-| **Easier to read** | Flat control flow instead of deep nesting, names that say what a thing holds, named constants instead of bare numbers |
-| **Easier to edit** | One copy of each rule, no dead code to step around, functions that do one job |
+| **Easier to change** | One copy of each rule, no dead code to step around, functions that do one job |
+| **Easier to understand** | Flat control flow instead of deep nesting, names that say what a thing holds, named constants instead of bare numbers |
 | **Better documented** | A file map, pages for the logic that is not obvious, docstrings in your project's style, comments that are short and correct |
 | **Less clutter on disk** | Throwaway logs, caches and leftovers removed after you approve; backups, application and audit logs, secrets and data never touched |
 | **Better organised** | Related code kept together, one pattern per job, files that each do one thing, no `utils` dumping grounds, no circular dependencies |
@@ -70,15 +70,15 @@ Use one or both. Guard keeps new code clean. Fix deals with what is already ther
 
 Nothing is changed before your tests and linters have run once, and nothing stays changed if they fail afterwards.
 
-## Built for human review
+## Changes small enough to check
 
-AI can write code faster than people can read it. When reviews turn into skimming, quality slips without anyone deciding it should. Every part of this plugin is meant to keep a human able to follow what changed.
+AI can write code faster than anyone can check it. When checking turns into skimming, quality slips without anyone deciding it should. Every part of this plugin keeps a change small and explained, so whoever owns the project can tell what changed and that nothing else did.
 
 - **Small scope.** By default it touches only your current change, not the whole repo.
 - **One kind of change at a time.** Duplicate removal, dead code and renames arrive separately, so you can accept one and reject another.
 - **Renames and moves on their own.** They never hide inside other edits.
 - **A short report.** What changed and why, what was skipped, which checks ran, and what nothing verified.
-- **Batches you can read.** A whole-project cleanup goes folder by folder and stops to ask when a batch gets large.
+- **Batches you can check.** A whole-project cleanup goes folder by folder and stops to ask when a batch gets large.
 - **Tests left alone.** It does not edit tests in the same run as the code they protect.
 
 The `slim-pr` skill then writes the pull request description: what changed, why, how to test it and the risks, in 200 words or fewer. It drops claims the diff does not support, never trims a breaking change, and lists stray files and unrelated edits that should not be in the branch.
@@ -274,7 +274,7 @@ For generic-looking UI and copy, see [antislop](https://github.com/miqdadbadjube
 
 <div align="center">
 
-*The best code review is the one with less to read.*
+*Good code makes the next change easy.*
 
 [MIT](LICENSE)
 

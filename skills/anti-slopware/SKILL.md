@@ -1,14 +1,14 @@
 ---
 name: anti-slopware
-description: Improves code quality without changing behaviour. Removes duplicated and useless code, simplifies verbose code, makes code easier to read, edit and navigate, and keeps every change small and explained so humans can review it. Three levels - easy (duplication only), medium (plus dead and useless code), hard (plus simplifying, clear naming and organisation). Includes bug checks for Python, JavaScript, TypeScript, Java, C#, C, C++, Go, Rust, PHP and Dart. Use when the user asks to clean up, deslop, dedupe, simplify, tidy or reorganise code, to make code more readable or maintainable, to remove dead code or AI slop, or types /anti-slopware. Two modes - guard (prevents slop in code as it is written; use when the user asks for guard mode, slop-free code, or to keep new code clean) and fix (cleans existing code, from the current change to a whole project).
+description: Improves code quality without changing behaviour, so a project stays easy to maintain and to improve. Removes duplicated and useless code, simplifies verbose code, makes code easier to understand, change and navigate, and keeps every change small and explained so it can be checked. Three levels - easy (duplication only), medium (plus dead and useless code), hard (plus simplifying, clear naming and organisation). Includes bug checks for Python, JavaScript, TypeScript, Java, C#, C, C++, Go, Rust, PHP and Dart. Use when the user asks to clean up, deslop, dedupe, simplify, tidy or reorganise code, to make code more readable or maintainable, to remove dead code or AI slop, or types /anti-slopware. Two modes - guard (prevents slop in code as it is written; use when the user asks for guard mode, slop-free code, or to keep new code clean) and fix (cleans existing code, from the current change to a whole project).
 license: MIT
 metadata:
-  version: "0.13.2"
+  version: "0.13.3"
 ---
 
 # anti-slopware
 
-Make code easier to read, easier to change and easier to find your way around, without changing what it does.
+Raise the quality of the code so the project is easier to maintain and to improve: easier to understand, easier to change and easier to find your way around. Do it without changing what the code does.
 
 Fewer lines is a side effect, not the goal. A change that makes code shorter but harder to follow is not made. A change that adds a line to make code clearer (a named constant, a well-named helper) is.
 
@@ -91,7 +91,7 @@ Then run the language checks: read [references/languages.md](references/language
 
 Make one kind of change at a time, smallest first, so a reviewer can accept one kind and reject another. Match the project's existing style and naming.
 
-A cleanup a human cannot review is not finished. If the result is too large to read in one sitting, split it and say how.
+A cleanup that cannot be checked is not finished. If the result is too large to check in one sitting, split it and say how.
 
 ## 6. Verify
 
