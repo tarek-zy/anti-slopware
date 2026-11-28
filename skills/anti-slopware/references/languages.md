@@ -15,6 +15,7 @@ Run these for every language in scope. They look for bugs, which is a different 
 | `.php` | [lang-php.md](lang-php.md) |
 | `.dart` | [lang-dart.md](lang-dart.md) |
 | `.sh` `.bash` `.zsh`, and any file whose first line is a shell shebang | [lang-shell.md](lang-shell.md) |
+| `.sql`, and SQL statements inside other files | [lang-sql.md](lang-sql.md) |
 
 No file for the language: apply the "Every language" list below and use the project's own compiler and linter.
 
