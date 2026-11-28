@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.15.0
+
+- `test-slop` now checks what a change did to its own tests. It lists tests that were weakened, skipped, deleted, renamed out of the run, shadowed, detached with a mock or excluded in configuration, and runs each old test against the new code. A test edit that follows a stated behaviour change is left alone. A test changed to pass is restored with `fix`, and the failure it hid is reported as a possible bug.
+- A fix must come with a test that fails without it: the fix's test is run against the code before the fix.
+- New suspects: tests that never reach the code, tests the runner does not collect, expected values that agree with the bug.
+- It reports exclusions in the runner's and CI's configuration and does not edit them.
+- Tested by a fresh agent on a Python project where a branch broke the code and bent the tests to fit. It passed with no change to the draft.
+
 ## 0.14.0
 
 - Shell language check for `sh`, Bash and zsh scripts: unquoted expansions, deletes and moves through an empty variable, hidden failures, Bash syntax under `sh`, variables lost in a subshell, `read` pitfalls, injection and temporary files. It lists what is not slop in shell, and says to run a script only inside a throwaway directory.

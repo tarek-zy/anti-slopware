@@ -56,6 +56,12 @@ The `code-docs` skill documents the code so that people and coding agents can fi
 
 The other skills work with it: cleanup leaves comments alone, guard mode documents new code as it is written, and `organize` is followed by an update to the file map.
 
+### Tests
+
+The `test-slop` skill checks that a green test suite means something. It finds tests that cannot fail, tests that never reach the code and tests the runner never runs, and proves each one by breaking the code and showing the test still passes.
+
+It also checks what a change did to its own tests: an assertion loosened, an expected value changed, a test skipped, renamed or deleted, a failing case dropped so the suite stays green. It runs the old test against the new code, and a fix's test against the code before the fix. A test edit that follows a stated behaviour change is left alone. A test bent to fit broken code is restored, and the failure it was hiding is reported as a possible bug. It never edits the code under test.
+
 This is not a minifier. Fewer lines is a side effect, not the goal. When a named constant or a small helper makes code clearer, it adds one, and it never trades clarity for brevity.
 
 ## Two modes
@@ -174,7 +180,7 @@ Run it as `/anti-slopware`.
 | `/anti-slopware junk` or `/junk-sweep` | List leftover files and caches with sizes; add `clean` to remove them after approval |
 | `/anti-slopware errors` or `/error-slop` | Report error handling that hides failures; add `fix` to change it |
 | `/anti-slopware deps` or `/dep-check` | Report unused, missing and unverifiable dependencies; add `fix` to edit the manifest |
-| `/anti-slopware tests` or `/test-slop` | Report tests that prove nothing; add `fix` to strengthen or remove them |
+| `/anti-slopware tests` or `/test-slop` | Report tests that prove nothing or were changed to pass; add `fix` to restore, strengthen or remove them |
 | `/anti-slopware guard` | Turn guard mode on for this session |
 | `/anti-slopware guard hard` | Guard mode with the strictest rules |
 
