@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.16.0
+
+- Ruby language check: nil and truthiness, rescues that are too wide, shared defaults, bang methods that return `nil`, precedence of `and` and `or`, string and symbol keys, unsafe input handling, and a short Rails list. It lists what is not slop in Ruby, such as methods reached by name and `self.` on a setter.
+- Tested by a fresh agent on a Ruby project with planted bugs and traps. It passed with no change to the draft.
+
 ## 0.15.0
 
 - `test-slop` now checks what a change did to its own tests. It lists tests that were weakened, skipped, deleted, renamed out of the run, shadowed, detached with a mock or excluded in configuration, and runs each old test against the new code. A test edit that follows a stated behaviour change is left alone. A test changed to pass is restored with `fix`, and the failure it hid is reported as a possible bug.
