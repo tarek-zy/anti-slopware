@@ -1,8 +1,8 @@
 {
   "name": "anti-slopware",
   "displayName": "anti-slopware",
-  "version": "0.13.2",
-  "description": "anti-slopware quietly raises the quality of the code your AI agent writes. It clears out clutter, organizes and documents the code so people and agents can find their way around it, and keeps changes and pull requests small and clear, so the humans who own the code can understand, review and maintain it.",
+  "version": "0.13.3",
+  "description": "anti-slopware quietly raises the quality of the code your AI agent writes. It clears out clutter, organizes and documents the code, and keeps changes and pull requests small and clear, so the project stays easy to maintain and to improve, for people and for agents.",
   "author": {
     "name": "tarek-zy",
     "url": "https://github.com/tarek-zy"
@@ -10,5 +10,5 @@
   "homepage": "https://github.com/tarek-zy/anti-slopware",
   "repository": "https://github.com/tarek-zy/anti-slopware",
   "license": "MIT",
-  "keywords": ["code-quality", "readability", "maintainability", "refactoring", "dead-code", "duplication", "code-review", "ai-slop"]
+  "keywords": ["code-quality", "maintainability", "readability", "refactoring", "dead-code", "duplication", "code-review", "ai-slop"]
 }

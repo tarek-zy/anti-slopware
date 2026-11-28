@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.13.3
+
+- Wording only. The stated goal is now code quality that keeps a project easy to maintain and to improve, for people and for agents. Readable code and small, checkable changes are how it gets there, not the goal. Changed in the README, the plugin and marketplace descriptions, and the description and opening of the `anti-slopware` skill. No rule changed.
+- The C language check was tested on a project with planted bugs and traps, before and after this change. It passed both times with no change needed.
+
 ## 0.13.2
 
 - `junk-sweep` asks the user about every item it was unsure of, one clear question each, with keep as the default. It deletes one only on a clear yes for that item. In an unattended run it deletes none of them and puts the questions in the report.
