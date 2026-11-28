@@ -9,7 +9,7 @@ Shipped one skill at a time, each with examples and tests.
 - [x] `organize`: project structure; splits do-everything files, breaks up dumping grounds, removes circular dependencies, one pure move at a time
 - [x] `code-docs`: layered documentation that adapts to the project's own system; organises comments instead of deleting them
 - [x] `slim-pr`: PR descriptions as what / why / how to test / risks; flags noise in the diff
-- [x] `test-slop`: assertions that cannot fail, over-mocking, copy-pasted cases
+- [x] `test-slop`: assertions that cannot fail, over-mocking, copy-pasted cases, tests weakened, skipped or deleted to hide a failure, fixes with no test that fails without them
 - [x] `dep-check`: unused dependencies, imports of packages that do not exist
 - [x] `error-slop`: swallowed exceptions, catch-everything blocks
 - [x] `review-map`: a reading guide for the reviewer
