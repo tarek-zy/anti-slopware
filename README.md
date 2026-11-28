@@ -259,6 +259,7 @@ Cleanup is one job. Finding bugs is another. For each language in your code, the
 | Dart, Flutter | `dart analyze`, `flutter test` | `BuildContext` after `await`, undisposed controllers, futures created in `build` |
 | Shell | `bash -n` or `sh -n`, ShellCheck, checkbashisms | Unquoted expansions, Bash syntax under `sh`, failures a pipeline hides, `eval` on input |
 | SQL | A scratch database, `EXPLAIN`, SQLFluff | `= NULL`, join fan-out, outer joins turned inner, `UPDATE` with no `WHERE`, positional `INSERT ... SELECT *` |
+| Ruby | `ruby -wc`, RuboCop, Brakeman, bundler-audit | Bang methods that return `nil`, `rescue Exception`, shared `Hash.new([])` defaults, `and` and `or` precedence |
 
 </details>
 

@@ -14,6 +14,7 @@ Run these for every language in scope. They look for bugs, which is a different 
 | `.rs` | [lang-rust.md](lang-rust.md) |
 | `.php` | [lang-php.md](lang-php.md) |
 | `.dart` | [lang-dart.md](lang-dart.md) |
+| `.rb` `.rake` `.gemspec`, `Rakefile`, `Gemfile` | [lang-ruby.md](lang-ruby.md) |
 | `.sh` `.bash` `.zsh`, and any file whose first line is a shell shebang | [lang-shell.md](lang-shell.md) |
 | `.sql`, and SQL statements inside other files | [lang-sql.md](lang-sql.md) |
 
