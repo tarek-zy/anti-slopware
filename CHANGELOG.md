@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.17.0
+
+- SQL language check: NULL logic, join fan-out, outer joins turned inner, `UPDATE` and `DELETE` with no `WHERE`, ungrouped columns, `AND` and `OR` precedence, limits with no order, type and date comparisons, transactions and migrations. It lists what is not slop in SQL, starting with applied migrations, and says to run statements only against a scratch database.
+- Tested by a fresh agent on a SQLite project with planted bugs and traps. It passed with no change to the draft.
+
 ## 0.15.0
 
 - `test-slop` now checks what a change did to its own tests. It lists tests that were weakened, skipped, deleted, renamed out of the run, shadowed, detached with a mock or excluded in configuration, and runs each old test against the new code. A test edit that follows a stated behaviour change is left alone. A test changed to pass is restored with `fix`, and the failure it hid is reported as a possible bug.
