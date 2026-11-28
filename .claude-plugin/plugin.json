@@ -1,7 +1,7 @@
 {
   "name": "anti-slopware",
   "displayName": "anti-slopware",
-  "version": "0.13.2",
+  "version": "0.14.0",
   "description": "anti-slopware quietly raises the quality of the code your AI agent writes. It clears out clutter, organizes and documents the code so people and agents can find their way around it, and keeps changes and pull requests small and clear, so the humans who own the code can understand, review and maintain it.",
   "author": {
     "name": "tarek-zy",

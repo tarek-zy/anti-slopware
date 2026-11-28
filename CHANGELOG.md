@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.14.0
+
+- Shell language check for `sh`, Bash and zsh scripts: unquoted expansions, deletes and moves through an empty variable, hidden failures, Bash syntax under `sh`, variables lost in a subshell, `read` pitfalls, injection and temporary files. It lists what is not slop in shell, and says to run a script only inside a throwaway directory.
+- Tested by a fresh agent on a shell project with planted bugs and traps. It passed with no change to the draft.
+
 ## 0.13.2
 
 - `junk-sweep` asks the user about every item it was unsure of, one clear question each, with keep as the default. It deletes one only on a clear yes for that item. In an unattended run it deletes none of them and puts the questions in the report.
