@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.14.0
+
+- Shell language check for `sh`, Bash and zsh scripts: unquoted expansions, deletes and moves through an empty variable, hidden failures, Bash syntax under `sh`, variables lost in a subshell, `read` pitfalls, injection and temporary files. It lists what is not slop in shell, and says to run a script only inside a throwaway directory.
+- Tested by a fresh agent on a shell project with planted bugs and traps. It passed with no change to the draft.
+
 ## 0.13.3
 
 - Wording only. The stated goal is now code quality that keeps a project easy to maintain and to improve, for people and for agents. Readable code and small, checkable changes are how it gets there, not the goal. Changed in the README, the plugin and marketplace descriptions, and the description and opening of the `anti-slopware` skill. No rule changed.
